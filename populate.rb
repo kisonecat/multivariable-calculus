@@ -14,7 +14,7 @@ File.open('topics.txt').readlines.each{ |line|
 
   filename = "#{shortname}/#{shortname}.tex"
   f = File.open( filename, "w" )
-  f.puts filename
+  f.puts template
   f.close
 
   c.puts "#{shortname}/#{shortname}"
