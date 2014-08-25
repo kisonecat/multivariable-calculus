@@ -1,0 +1,7 @@
+#! /usr/bin/ruby
+
+File.open('topics.txt').readlines.each{ |line|
+  shortname = line.split( ": " )[0]
+  title = line.split( ": " )[1]
+  puts shortname, title
+}
