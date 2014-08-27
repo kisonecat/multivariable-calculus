@@ -4,6 +4,7 @@ description: These prelecture assignments introduce some concepts before lecture
 ---
 
 sequences/sequences
+  sequences/notation
 series/series
 divergence-tests/divergence-tests
 comparison-tests/comparison-tests

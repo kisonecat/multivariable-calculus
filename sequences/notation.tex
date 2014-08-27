@@ -1,0 +1,124 @@
+\documentclass{ximera}
+
+\title{Notation for sequences}
+\newcommand{\defnword}[1]{\textbf{#1}}
+
+\begin{document}
+
+\begin{abstract}
+  A function from positive integers to the real numbers is a sequence.
+\end{abstract}
+
+\maketitle
+
+A ``sequence'' of numbers is just a list of numbers.  For
+example, here is a list of numbers:
+$$
+1,\quad 1,\quad 2,\quad 3,\quad 5,\quad 8,\quad 13,\quad 21,\quad \ldots
+$$
+Note that numbers in the list can repeat.  And consider those little
+dots at the end!  The dots ``\ldots'' signify that the list keeps
+going, and going, and going---forever.  Presumably the sequence
+continues by following the pattern that the first few ``terms''
+suggest.  But what's that pattern?
+
+\begin{warning}
+  Maybe you are feeling that this formality is unnecessary, or even
+  ridiculous; why can't we just list off a few terms and pick up on
+  the pattern intuitively?  As we'll see later, that might be very
+  hard---nay, impossible---to do!  There might be very different---but
+  equally reasonable---patterns that start the same way.
+
+  To resolve this ambiguity, it is perhaps not so ridiculous to
+  introduce the formalism of ``functions.''  Functions provide a nice
+  language for associating numbers (terms) to other numbers
+  (indices).}
+\end{warning}
+
+To make this talk of ``patterns'' less ambiguous, it is useful to
+think of a sequence as a function. We have up until now dealt with
+functions whose domains are the real numbers, or a subset of the real
+numbers, like $f(x)=\sin (1/x)$.
+
+A real-valued function with domain the natural numbers
+$\N=\{1,2,3,\ldots\}$ is a \defnword{sequence}.
+
+Other functions will also be regarded as sequences: the domain might
+include $0$ alongside the positive integers, meaning that the
+domain is the non-negative integers, $\ds
+\Z^{\ge0}=\{0,1,2,3,\ldots\}$.  The range of the function is still
+allowed to be the real numbers; in symbols, the function $f\colon
+\N\to\R$ is a sequence.
+
+Sequences are written down in a few different, but equivalent,
+ways; you might see a sequence written as
+\begin{align*}
+  & a_1,\quad a_2, \quad a_3, \quad\ldots, \\
+  & a_n \\
+  & \left(a_n\right)_{n \in \N}, \\
+  & \left\{a_n\right\}_{n=1}^\infty, \\
+  & \left\{f(n)\right\}_{n=1}^\infty, \quad \mbox{or} \\
+  & \left(f(n)\right)_{n \in \N},
+\end{align*}
+depending on which author you read.  Worse, depending on the
+situation, the same author (and this author) might use various
+notations for a sequence!  In this textbook, I will usually write
+$(a_n)$ if I want to speak of the sequence as a whole (think
+\textit{gestalt}) and I will write $a_n$ if I am speaking of a
+specific term in the sequence.
+
+Let's summarize the preceding discussion in the following definition.
+\begin{definition} \relax\index{sequence} A \defnword{sequence}
+  $(a_n)$ is, formally speaking, a real-valued function with domain
+  \[
+  \{ n \in \Z : n \geq N \},\quad \mbox{for some integer $N$.}
+  \]
+  Stated more humbly, a sequence assigns a real number to the
+  integers starting with an index $N$.
+
+  The ``outputs'' of a sequence are the \defnword{terms} of the
+  sequence; the ``$n^{\nth}$ term'' is the real number that the
+  sequence associates to the natural number $n$, and is usually
+  written $a_n$. \index{sequence!term} The $n$ in the phrase
+  ``$n^{\nth}$ term'' is called an
+  \defnword{index}\index{sequence!index}; the plural of index is
+  either indices or indexes, depending on who you ask.  The first
+  index $N$ is called the \defnword{initial
+    index}\index{sequence!index!initial}.
+\end{definition} 
+
+\begin{observation}
+  Recall that the natural numbers $\N$ are the counting numbers $1, 2,
+  3, 4, \ldots$.  If we want our sequence to start at zero, we use
+  $\Z^{\ge 0}$ as the domain instead.  The fancy symbols $\Z^{\ge 0}$
+  refer to the non-negative integers, which include zero (since zero
+  is neither positive nor negative) and also positive integers (since
+  they certainly aren't negative).
+
+  To confuse matters further, some people---especially computer
+  scientists---might include zero in the natural numbers $\N$.
+  Mathematics is cultural.
+\end{observation}
+
+\begin{warning}
+  Usually the ``domain'' of a sequence is $\N$ and $\Z^{\ge 0}$.  But
+  depending on the context, it may be convenient for a sequence to
+  start somewhere else---perhaps with some negative number.  We
+  shouldn't let the usual situation of $\N$ or $\Z^{\ge 0}$ get in the
+  way of making the best choice for the problem at hand.
+\end{warning}
+
+As you can tell, there is a deep tension between precise definition
+and a vague flexibility; as instructors, how we navigate that tension
+will be a big part of whether we are successful in teaching the
+course.  We need to invoke precision when we're tempted to be too
+vague, and we need to reach for an extra helping of vagueness when the
+formalism is getting in the way of our understanding.  It can be a
+tough balance.
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
