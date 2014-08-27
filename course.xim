@@ -20,3 +20,12 @@ sequences/sequences
     sequences/features/monotone-convergence
 series/series
 divergence-tests/divergence-tests
+  divergence-tests/integral-test
+comparison-tests/comparison-tests
+  comparison-tests/ratio-test
+  comparison-tests/root-test
+  comparison-tests/limit-comparison-test
+alternating-series/alternating-series
+  alternating-series/absolute-convergence
+  alternating-series/definition
+

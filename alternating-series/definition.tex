@@ -1,0 +1,287 @@
+\documentclass{ximera}
+
+\title{Definition of alternating series}
+
+\begin{document}
+
+\begin{abstract}
+  In an alternating series, the signs of the terms flip between being positive and negative.
+\end{abstract}
+
+\maketitle
+
+\section{What is an alternating series?}
+
+In general, it can be quite difficult to decide whether a series converges or not when some of the terms are positive, and some are negative.  There is one situation, though, where it is much easier; this is the case of an \textbf{alternating series} where the signs of the terms are flip-flopping back and forth, e.g.,
+\[
+\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} = \frac{1}{1} + \frac{-1}{2} + \frac{1}{3} + \frac{-1}{4} + \frac{1}{5} + \frac{-1}{6} + \cdots
+\]
+where the terms with odd index are positive, and the terms with even index are negative.
+
+\youtube{https://www.youtube.com/watch?v=3o9SitwzUkQ}
+
+\section{What is the alternating series test?}
+
+There is a special convergence test, the \textbf{alternating series test}, which makes it quick to show that such a series converges in many cases.  Specifically, consider an alternating series \(\sum_{n=1}^\infty (-1)^{n+1} a_n\) where \((a_n)\) is a decreasing sequence of positive numbers.  If \(\lim_{n\to\infty}a_n=0\), then \(\sum_{n=1}^\infty (-1)^{n+1} a_n\) converges.
+
+\youtube{https://www.youtube.com/watch?v=oz8vx4HM-cw}
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=3}^\infty \left( \displaystyle\frac{2}{3} \, \left(-1\right)^{n} n^{1.1} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      Set \(a_{n} = \displaystyle\frac{2}{3} \, \left(-1\right)^{n} n^{1.1}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(\lim_{n \to \infty} a_n \neq 0\).
+    \end{hint}
+    \begin{hint}
+      Therefore, the series diverges.
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges absolutely.}
+      \choice{The series converges conditionally.}
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\hrule
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=4}^\infty \left( \displaystyle\frac{2 \, \left(-1\right)^{n}}{3 \, n^{0.54}} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      Set \(a_{n} = \displaystyle\frac{2 \, \left(-1\right)^{n}}{3 \, n^{0.54}}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(\lim_{n \to \infty} a_n = 0\).
+    \end{hint}
+    \begin{hint}
+      So the limit test is inconclusive in this case.
+    \end{hint}
+    \begin{hint}
+      Let's check absolute convergence.
+    \end{hint}
+    \begin{hint}
+      We then consider \(\displaystyle\sum_{n = 4} \left| (-1)^n/n^{0.54} \right|\) which is the \(p\)-series \(\displaystyle\sum_{n = 4} 1/n^{0.54}\).
+    \end{hint}
+    \begin{hint}
+      Since \(p = 0.54 < 1\), we may conclude that the series does not convege absolutely.
+    \end{hint}
+    \begin{hint}
+      We should check for conditional convergence.
+    \end{hint}
+    \begin{hint}
+      Note that \(\displaystyle\sum_{n = 4} (-1)^n/n^{0.54} \) is an alternating series.
+    \end{hint}
+    \begin{hint}
+      Since \(|a_{n+1}| < |a_{n}|\), the sequence of absolute values is decreasing.
+    \end{hint}
+    \begin{hint}
+      Note that \(\lim_{n\to\infty} a_n = 0\).
+    \end{hint}
+    \begin{hint}
+      Therefore, by the alternating series test, the series \(\displaystyle\sum_{n = 4} (-1)^n/n^{0.54} \) converges.
+    \end{hint}
+    \begin{hint}
+      Since the series converges but not absolutely, we say that the series converges conditionally.
+    \end{hint}
+    
+    
+    \begin{multiple-choice}
+      \choice[correct]{The series converges conditionally.}
+      \choice{The series converges absolutely.}
+      \choice{The series diverges.}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\section{Why do we care?}
+
+A big reason to care about alternating series is that it is relatively easy to approximate the value of an alternating series.
+
+\youtube{https://www.youtube.com/watch?v=fBLv5AXjz3Q}
+
+\begin{question}
+  It can be shown that \[L = \displaystyle\sum_{m=1}^\infty \left( \displaystyle\frac{3 \, \left(-1\right)^{m + 1}}{m^{2}} \right) = \displaystyle\frac{1}{4} \, \pi^{2},\] but since this is an alternating series, its value can be approximated.  By the alternating series test, which of the following is known to be an estimate of \(L\) to within an error of \(\displaystyle\frac{1}{2}\)?  I imagine you may want to use a calculator to do some arithmetic, but using the ``\pi'' button might spoil the fun.
+
+  \begin{solution}
+    \begin{hint}
+      We first look for a term in the series with absolute value no larger than \(\displaystyle\frac{1}{2}\).
+    \end{hint}
+    \begin{hint}
+      Set \(a_{m} = \displaystyle\frac{3 \, \left(-1\right)^{m + 1}}{m^{2}}\).
+    \end{hint}
+    \begin{hint}
+      Plugging in a few values, we find that when \(m = 3\), then \(|a_{3}| = \displaystyle\frac{1}{3}\) which is less than \(\displaystyle\frac{1}{2}\).
+    \end{hint}
+    \begin{hint}
+      So the true value of the series is between \(\displaystyle\sum_{m = 1}^{2} \displaystyle\frac{3 \, \left(-1\right)^{m + 1}}{m^{2}}\) and \(\displaystyle\sum_{m = 1}^{3} \displaystyle\frac{3 \, \left(-1\right)^{m + 1}}{m^{2}}\).
+    \end{hint}
+    \begin{hint}
+      Doing some arithmetic, \(\displaystyle\sum_{m = 1}^{2} \displaystyle\frac{3 \, \left(-1\right)^{m + 1}}{m^{2}} = \displaystyle\frac{9}{4}\).
+    \end{hint}
+    \begin{hint}
+      Doing some more arithmetic, \(\displaystyle\sum_{m = 1}^{3} \displaystyle\frac{3 \, \left(-1\right)^{m + 1}}{m^{2}} = \displaystyle\frac{31}{12}\).
+    \end{hint}
+    \begin{hint}
+      Looking over the possible choices, \(\displaystyle\frac{5}{2}\) is between \(\displaystyle\frac{9}{4}\) and \(\displaystyle\frac{31}{12}\).
+    \end{hint}
+    \begin{hint}
+      So we conclude that \(\left| L - \displaystyle\frac{5}{2} \right| < \displaystyle\frac{1}{2}\).
+    \end{hint}
+    \begin{hint}
+      In other words, \(L\) is approximately \(\displaystyle\frac{5}{2}\) with an error of no more than \(\displaystyle\frac{1}{2}\).
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{\(\displaystyle\frac{5}{2}\)}
+      \choice{\(3\)}
+      \choice{\(1\)}
+      \choice{\(4\)}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+
+
+These sorts of appproximations are important for more than just
+computational applications: thinking about the error in such an
+approximation lets us prove that \(e\) is an irrational number.
+
+\youtube{https://www.youtube.com/watch?v=Xh0Q0VJ-6X0}
+
+\begin{question}
+  It can be shown that \[L = \displaystyle\sum_{j=1}^\infty \left( \displaystyle\frac{\left(\displaystyle\frac{1}{8}\right)^{j} \left(-1\right)^{j + 1}}{j} \right) = \log\left(\displaystyle\frac{9}{8}\right),\] but since this is an alternating series, its value can be approximated.  By the alternating series test, which of the following is known to be an estimate of \(L\) to within an error of \(\displaystyle\frac{1}{129}\)?  Once again, I imagine you may want to use a calculator to do some arithmetic, but using the ``ln'' button might spoil the fun.
+
+  \begin{solution}
+    \begin{hint}
+      We first look for a term in the series with absolute value no larger than \(\displaystyle\frac{1}{129}\).
+    \end{hint}
+    \begin{hint}
+      Set \(a_{j} = \displaystyle\frac{\left(\displaystyle\frac{1}{8}\right)^{j} \left(-1\right)^{j + 1}}{j}\).
+    \end{hint}
+    \begin{hint}
+      Plugging in a few values, we find that when \(j = 3\), then \(|a_{3}| = \displaystyle\frac{1}{1536}\) which is less than \(\displaystyle\frac{1}{129}\).
+    \end{hint}
+    \begin{hint}
+      So the true value of the series is between \(\displaystyle\sum_{j = 1}^{2} \displaystyle\frac{\left(\displaystyle\frac{1}{8}\right)^{j} \left(-1\right)^{j + 1}}{j}\) and \(\displaystyle\sum_{j = 1}^{3} \displaystyle\frac{\left(\displaystyle\frac{1}{8}\right)^{j} \left(-1\right)^{j + 1}}{j}\).
+    \end{hint}
+    \begin{hint}
+      Doing some arithmetic, \(\displaystyle\sum_{j = 1}^{2} \displaystyle\frac{\left(\displaystyle\frac{1}{8}\right)^{j} \left(-1\right)^{j + 1}}{j} = \displaystyle\frac{15}{128}\).
+    \end{hint}
+    \begin{hint}
+      Doing some more arithmetic, \(\displaystyle\sum_{j = 1}^{3} \displaystyle\frac{\left(\displaystyle\frac{1}{8}\right)^{j} \left(-1\right)^{j + 1}}{j} = \displaystyle\frac{181}{1536}\).
+    \end{hint}
+    \begin{hint}
+      Looking over the possible choices, \(\displaystyle\frac{2}{17}\) is between \(\displaystyle\frac{15}{128}\) and \(\displaystyle\frac{181}{1536}\).
+    \end{hint}
+    \begin{hint}
+      So we conclude that \(\left| L - \displaystyle\frac{2}{17} \right| < \displaystyle\frac{1}{129}\).
+    \end{hint}
+    \begin{hint}
+      In other words, \(L\) is approximately \(\displaystyle\frac{2}{17}\) with an error of no more than \(\displaystyle\frac{1}{129}\).
+    \end{hint}
+    
+    \begin{multiple-choice}
+      \choice[correct]{\(\displaystyle\frac{2}{17}\)}
+      \choice{\(\displaystyle\frac{1}{10}\)}
+      \choice{\(\displaystyle\frac{2}{15}\)}
+      \choice{\(\displaystyle\frac{1}{7}\)}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\section{Warning!}
+
+Note that the alternating series test requires that the sequence \((a_n)\) is monotone; when the sequence \((a_n)\) is not monotone, then the alternating may converge or may diverge, but the ``alternating series test'' does not help us.
+
+\youtube{https://www.youtube.com/watch?v=TrgulgCQj-g}
+
+\begin{question}
+  Consider the sequence \((a_{n})\) defined by by
+  \[
+  a_{n} = \begin{cases}
+    \displaystyle\frac{1}{\sqrt{\displaystyle\frac{1}{2} \, n + \displaystyle\frac{1}{2}}} & \mbox{if \(n\) is odd, and} \\
+    -\displaystyle\frac{4}{n^{2}} & \mbox{if \(n\) is even.}
+  \end{cases}
+  \]
+  Does the series \(\displaystyle\sum_{n=6}^\infty a_{n}\) converge?
+  
+  \begin{solution}
+    \begin{hint}
+      We might begin by applying the limit test.
+    \end{hint}
+    \begin{hint}
+      Note that \(\lim_{n \to \infty} a_{n} = 0\).
+    \end{hint}
+    \begin{hint}
+      So the limit test is inconclusive; we cannot immediately conclude that the series diverges, but with more work, we may yet find the series converges or diverges.
+    \end{hint}
+    \begin{hint}
+      The next easiest thing to consider is absolute convergence.
+    \end{hint}
+    \begin{hint}
+      Let us consider whether the series \(\displaystyle\sum_{n=6}^\infty \left| a_{n} \right| \) converges or diverges.
+    \end{hint}
+    \begin{hint}
+      If we consider the even terms, \(\displaystyle\sum_{n} \left| a_{2n} \right|  = \displaystyle\sum_{n} \displaystyle\frac{1}{n^{2}} \) which is a \(p\)-series with \(p = 2\) so it converges.
+    \end{hint}
+    \begin{hint}
+      But if we consider the odd terms, \(\displaystyle\sum_{n} \left| a_{2n-1} \right|  = \displaystyle\sum_{n} \displaystyle\frac{1}{\sqrt{n}} \) which is a \(p\)-series with \(p = \displaystyle\frac{1}{2}\) so it diverges.
+    \end{hint}
+    \begin{hint}
+      So the series \(\displaystyle\sum_{n=6}^\infty \left| a_{n} \right| \) diverges.
+    \end{hint}
+    \begin{hint}
+      This means the series \(\displaystyle\sum_{n=6}^\infty a_{n} \) does not converge absolutely, but it may end up that it converges conditionally.  Let's see!
+    \end{hint}
+    \begin{hint}
+      You might be tempted at this point to apply the alternating series test.
+    \end{hint}
+    \begin{hint}
+      But to apply the alternating series test requires that \(|a_{n}|\) be decreasing.
+    \end{hint}
+    \begin{hint}
+      This is not the case, so we cannot use the alternating series test.
+    \end{hint}
+    \begin{hint}
+      The only technique that remains is to consider the sequence of partial sums to show divergence (or convergence) by hand.
+    \end{hint}
+    \begin{hint}
+      In this case, the sum of the even terms is bounded (since the even terms form a convergent \(p\)-series with \(p = 2\)), but the sum of the odd terms is unbounded (since the odd terms form a divergent \(p\)-series with \(p = 2\)).
+    \end{hint}
+    \begin{hint}
+      So the sequence of partial sums is not bounded.
+    \end{hint}
+    \begin{hint}
+      So the sequence of partial sums does not converge.
+    \end{hint}
+    \begin{hint}
+      So the original series  \(\displaystyle\sum_{n=6}^\infty a_{n} \) diverges.
+    \end{hint}
+    
+
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+
+
+\end{document}

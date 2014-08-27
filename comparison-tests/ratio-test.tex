@@ -1,0 +1,188 @@
+\documentclass{ximera}
+
+\title{Ratio test}
+
+\begin{document}
+
+\begin{abstract}
+  The ratio test begins by considering the limit of the ratio of subsequent terms in a series.
+\end{abstract}
+
+\maketitle
+
+\section{What is the ratio test?}
+
+The geometric series \(\displaystyle\sum_{n=1}^\infty \displaystyle\frac{1}{4^n}\) converges because the common ratio between its terms is \(\displaystyle\frac{1}{4} < 1\); determining whether \(\displaystyle\sum_{n=1}^\infty \displaystyle\frac{n^5}{4^n}\) converges requires something more delicate.
+
+\youtube{https://www.youtube.com/watch?v=l1akoXWmhSM}
+
+The underlying technique is the ratio test.
+
+\youtube{https://www.youtube.com/watch?v=2gi7pyQNxbM}
+
+% Relevant video: ratio-test-example
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=9}^\infty \left( \displaystyle\frac{2^{n}}{2^{2 \, n + 5} {\left(5 \, n + 1\right)}} \right)\) converge or diverge?
+  
+  \begin{solution}
+    \begin{hint}
+      This series is built out of powers and polynomials, so the ratio test might be helpful, since we can expect some things to cancel.
+    \end{hint}
+    \begin{hint}
+      Let's set \(a_n = \displaystyle\frac{2^{n}}{2^{2 \, n + 5} {\left(5 \, n + 1\right)}}\).
+    \end{hint}
+    \begin{hint}
+      Then \(a_{n+1} = \displaystyle\frac{2^{n + 1}}{2^{2 \, n + 7} {\left(5 \, n + 6\right)}}\).
+    \end{hint}
+    \begin{hint}
+      So \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{2^{2 \, n + 5} 2^{n + 1} {\left(5 \, n + 1\right)}}{2^{2 \, n + 7} 2^{n} {\left(5 \, n + 6\right)}}\).
+    \end{hint}
+    \begin{hint}
+      Simplifying a bit yields \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{5 \, n + 1}{2 \, {\left(5 \, n + 6\right)}}\).
+    \end{hint}
+    \begin{hint}
+      In the ratio test, we compute \(L = \displaystyle\lim_{n \to \infty} \displaystyle\displaystyle\frac{a_{n+1}}{a_n}\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(L = \displaystyle\lim_{n \to \infty} \left( \displaystyle\frac{5 \, n + 1}{2 \, {\left(5 \, n + 6\right)}} \right) = \displaystyle\frac{1}{2}\).
+    \end{hint}
+    \begin{hint}
+      Since \(L < 1\), we may conclude by the ratio test that the given series coverges.
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{The series converges.}
+      \choice{The series diverges.}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+            
+\section{How do I apply the ratio test?}
+
+Here is how to apply the ratio test.  Suppose \(a_n > 0\) and you want to determine whether the series \(\sum_{n=1}^\infty a_n\) converges or diverges.  All you need to do is compute \(L = \displaystyle\lim_{n\to\infty} a_{n+1}/a_n\), and if \(L < 1\), the series converges, while if \(L > 1\), the series diverges.  If \(L = 1\), then the test is inconclusive, and you'll have to try something else.
+
+% Relevant video: ratio-test-statement
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=6}^\infty \left( \displaystyle\frac{{\left(3 \, n + 2\right)} n!}{5^{n}} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      This series is built out of polynomials and powers and factorials, so the ratio test might be helpful, since we can expect a ton of things to cancel.
+    \end{hint}
+    \begin{hint}
+      Let's set \(a_n = \displaystyle\frac{{\left(3 \, n + 2\right)} n!}{5^{n}}\).
+    \end{hint}
+    \begin{hint}
+      Then \(a_{n+1} = \displaystyle\frac{{\left(3 \, n + 5\right)} \left(n + 1\right)!}{5^{n + 1}}\).
+    \end{hint}
+    \begin{hint}
+      So \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{5^{n} {\left(3 \, n + 5\right)} \left(n + 1\right)!}{5^{n + 1} {\left(3 \, n + 2\right)} n!}\).
+    \end{hint}
+    \begin{hint}
+      The key to simplifying here is to note that \(\left(n + 1\right)! = n! \cdot (n + 1)\).
+    \end{hint}
+    \begin{hint}
+      Simplifying a bit yields \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{3 \, n^{2} + 8 \, n + 5}{5 \, {\left(3 \, n + 2\right)}}\).
+    \end{hint}
+    \begin{hint}
+      In the ratio test, we compute \(L = \displaystyle\lim_{n \to \infty} \displaystyle\displaystyle\frac{a_{n+1}}{a_n}\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(L = \displaystyle\lim_{n \to \infty} \left( \displaystyle\frac{3 \, n^{2} + 8 \, n + 5}{5 \, {\left(3 \, n + 2\right)}} \right) = +\infty\).
+    \end{hint}
+    \begin{hint}
+      Since \(L > 1\), we may conclude by the ratio test that the given series diverges.
+      
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+            
+
+\section{Does the ratio test always provide a useful answer?}
+
+\begin{question}
+  \begin{multiple-choice}
+    \choice[correct]{No.}
+    \choice{Yes.}
+  \end{multiple-choice}
+  
+\end{solution}
+
+Indeed, the ratio test is not always helpful.  But it is not too
+hard to apply, so it is often worth trying!
+
+\youtube{https://www.youtube.com/watch?v=yRaG43ukXAI}
+\end{question}
+
+\section{What is the ratio test good for?}
+
+The ratio test is powerful enough to address the convergence of \(\displaystyle\sum_{n=1}^\infty \frac{n!}{n^n}\) relatively easily.
+
+\youtube{https://www.youtube.com/watch?v=g4_tcaiGjLc}
+
+% Relevant video: ratio-test-one-over-e
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=3}^\infty \left( \displaystyle\frac{10^{n} n!}{\left(3 \, n\right)^{n}} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      This series is built out of powers and factorials, so the ratio test might be helpful, since we can expect some cancellation.
+    \end{hint}
+    \begin{hint}
+      Let's set \(a_n = \displaystyle\frac{10^{n} n!}{\left(3 \, n\right)^{n}}\).
+    \end{hint}
+    \begin{hint}
+      Then \(a_{n+1} = \displaystyle\frac{10^{n + 1} \left(n + 1\right)!}{{\left(3 \, n + 3\right)}^{n + 1}}\).
+    \end{hint}
+    \begin{hint}
+      So \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{10^{n + 1} \left(3 \, n\right)^{n} \left(n + 1\right)!}{10^{n} {\left(3 \, n + 3\right)}^{n + 1} n!}\).
+    \end{hint}
+    \begin{hint}
+      The key to simplifying here is to note that \(\left(n + 1\right)! = n! \cdot (n + 1)\).
+    \end{hint}
+    \begin{hint}
+      Simplifying a bit yields \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{10 \, \left(3 \, n\right)^{n}}{3 \, {\left(3 \, n + 3\right)}^{n}}\).
+    \end{hint}
+    \begin{hint}
+      In the ratio test, we compute \(L = \displaystyle\lim_{n \to \infty} \displaystyle\displaystyle\frac{a_{n+1}}{a_n}\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(L = \displaystyle\lim_{n \to \infty} \left( \displaystyle\frac{10 \, \left(3 \, n\right)^{n}}{3 \, {\left(3 \, n + 3\right)}^{n}} \right)\).
+    \end{hint}
+    \begin{hint}
+      One way to go about this is to use the fact that \(\displaystyle\lim_{n \to \infty} \left( \displaystyle\frac{n}{n + 1} \right)^{n} = e^{-1}\).
+    \end{hint}
+    \begin{hint}
+      And so \(L = \displaystyle\lim_{n \to \infty} \left( \displaystyle\frac{10 \, \left(3 \, n\right)^{n}}{3 \, {\left(3 \, n + 3\right)}^{n}} \right) = \displaystyle\frac{10}{3} \, e^{\left(-1\right)}\).
+    \end{hint}
+    \begin{hint}
+      Since \(e \approx 2.7183\), we find \(\displaystyle\frac{10}{3} \, e^{\left(-1\right)} \approx 1.2263\).
+    \end{hint}
+    \begin{hint}
+      Since \(L > 1\), we may conclude by the ratio test that the given series diverges.
+    \end{hint}
+
+    
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+Incidentally, that is a fun example, since it leads us to think about how \(n!\) compares to \((n/e)^n\).
+
+\youtube{https://www.youtube.com/watch?v=wnPBmJ70fzg}
+
+
+\end{document}

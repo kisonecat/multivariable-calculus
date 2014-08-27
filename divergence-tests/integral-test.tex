@@ -1,0 +1,117 @@
+\documentclass{ximera}
+
+\title{The integral test}
+
+\begin{document}
+
+\begin{abstract}
+  Series and integrals can be related to each other. 
+\end{abstract}
+
+\maketitle
+
+\section{How can integrating help us to address convergence?}
+
+Considering that integrals were defined via Riemann sums, it is not so surprising that series and integrals can be related to each other.  This is the basis of the integral test.
+
+\youtube{https://www.youtube.com/watch?v=JkRL4s80KrU}
+
+\hrule
+
+\section{How can integrating help analyze $\displaystyle\sum_{n=1}^\infty 1/n$?}
+
+We can use the integral test to show that the harmonic series diverges.
+
+\youtube{https://www.youtube.com/watch?v=TODKCEjmN_4}
+
+There are some trickier series that can be analzyed using integration (or Cauchy condensation, as your preference may be).
+
+\youtube{https://www.youtube.com/watch?v=z3uF_buwWjA}
+
+\hrule
+
+\section{How can integrating provide us with bounds?}
+
+\begin{question}
+  It can be shown that \(\displaystyle\int_{2}^\infty \displaystyle\frac{3}{ {\left(3 \, x + 1\right)}^{2} } \, dx = \displaystyle\frac{1}{7}\), which is the ``area'' under the graph of \(\displaystyle f(x) = \displaystyle\frac{3}{ {\left(3 \, x + 1\right)}^{2} }\) and to the right of the line \(x = 2\).  The value of \(\displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{3}{ {\left(3 \, n + 1\right)}^{2} } \right)\) is in which of the following intervals?
+
+  \begin{solution}
+    \begin{hint}
+      Let's set \(a_n = \displaystyle\frac{3}{ {\left(3 \, n + 1\right)}^{2} }\).
+    \end{hint}
+    \begin{hint}
+      The integral test does more than just tell us whether a series converges or diverges; it also provides a bound on the value of the series.
+    \end{hint}
+    \begin{hint}
+      Let's set \(f(x) = \displaystyle\frac{3}{ {\left(3 \, x + 1\right)}^{2} }\) so \(a_n = f(n)\).
+    \end{hint}
+    \begin{hint}
+      Then the integral test provides the bounds \(\displaystyle\int_{2}^\infty f(x) \, dx \leq \displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{3}{ {\left(3 \, n + 1\right)}^{2} } \right) \leq a_{2} + \displaystyle\int_{2}^\infty f(x) \, dx\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(\displaystyle\int_{2}^\infty \displaystyle\frac{3}{ {\left(3 \, x + 1\right)}^{2} } \, dx = \displaystyle\frac{1}{7}\).
+    \end{hint}
+    \begin{hint}
+      So we have that \(\displaystyle\frac{1}{7} \leq \displaystyle\sum_{n=2}^\infty a_{n} \leq a_{2} + \displaystyle\frac{1}{7}\).
+    \end{hint}
+    \begin{hint}
+      Since \(a_{2} = \displaystyle\frac{3}{49}\), we further have that \(\displaystyle\frac{1}{7} \leq \displaystyle\sum_{n=2}^\infty a_{n} \leq \displaystyle\frac{3}{49} + \displaystyle\frac{1}{7} = \displaystyle\frac{10}{49}\).
+    \end{hint}
+    \begin{hint}
+      In other words, the value of the series is in the interval \(\left[\displaystyle\frac{1}{7}, \displaystyle\frac{10}{49}\right]\).
+    \end{hint}
+    
+    \begin{multiple-choice}
+      \choice[correct]{[1/7, 10/49]}
+      \choice{[4/49, 1/7]}
+      \choice{[3/49, 1/7]}
+      \choice{[10/49, 13/49]}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\begin{question}
+  Here's another example of the same sort of deal.  It can be shown that \(\displaystyle\int_{1}^\infty \displaystyle\frac{3}{{\left(3 \, x + 1\right)}^{2}} \, dx = \displaystyle\frac{1}{4}\) by considering the region under the graph of \(\displaystyle f(x) = \displaystyle\frac{3}{{\left(3 \, x + 1\right)}^{2}}\) and to the right of the line \(x = 1\).
+
+  The value of \(\displaystyle\sum_{m=1}^\infty \left( \displaystyle\frac{3}{{\left(3 \, m + 1\right)}^{2}} \right)\) is in which of the following intervals?
+
+  \begin{solution}
+    \begin{hint}
+      Let's set \(a_m = \displaystyle\frac{3}{{\left(3 \, m + 1\right)}^{2}}\).
+    \end{hint}
+    \begin{hint}
+      The integral test does more than just tell us whether a series converges or diverges; it also provides a bound on the value of the series.
+    \end{hint}
+    \begin{hint}
+      Let's set \(f(x) = \displaystyle\frac{3}{{\left(3 \, x + 1\right)}^{2}}\) so \(a_m = f(m)\).
+    \end{hint}
+    \begin{hint}
+      Then the integral test provides the bounds \(\displaystyle\int_{1}^\infty f(x) \, dx \leq \displaystyle\sum_{m=1}^\infty \left( \displaystyle\frac{3}{{\left(3 \, m + 1\right)}^{2}} \right) \leq a_{1} + \displaystyle\int_{1}^\infty f(x) \, dx\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(\displaystyle\int_{1}^\infty \displaystyle\frac{3}{{\left(3 \, x + 1\right)}^{2}} \, dx = \displaystyle\frac{1}{4}\).
+    \end{hint}
+    \begin{hint}
+      So we have that \(\displaystyle\frac{1}{4} \leq \displaystyle\sum_{m=1}^\infty a_{m} \leq a_{1} + \displaystyle\frac{1}{4}\).
+    \end{hint}
+    \begin{hint}
+      Since \(a_{1} = \displaystyle\frac{3}{16}\), we further have that \(\displaystyle\frac{1}{4} \leq \displaystyle\sum_{m=1}^\infty a_{m} \leq \displaystyle\frac{3}{16} + \displaystyle\frac{1}{4} = \displaystyle\frac{7}{16}\).
+    \end{hint}
+    \begin{hint}
+      In other words, the value of the series is in the interval \(\left[\displaystyle\frac{1}{4}, \displaystyle\frac{7}{16}\right]\).
+      
+    \end{hint}
+    
+    \begin{multiple-choice}
+      \choice[correct]{[1/4, 7/16]}
+      \choice{[1/16, 1/4]}
+      \choice{[3/16, 1/4]}
+      \choice{[7/16, 5/8]}
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\end{document}

@@ -10,21 +10,126 @@
 
 \maketitle
 
-% \begin{question}
-%   What is the correct answer to this question?
+We study various convergence tests to determine whether or not a
+series converges: in particular, we will consider the comparison test,
+the ratio test and the root test.
 
-%   \begin{solution}
-%     \begin{multiple-choice}
-%       \choice[correct]{Correct answer}
-%       \choice{First Distractor}
-%       \choice{Second Distractor}
-%       \choice{Third Distractor}
-%     \end{multiple-choice}  
-%   \end{solution}
-% \end{question}
+After working through this material, I hope you will be able to
+\begin{itemize}
+\item identify a \(p\)-series,
+\item compare a series to a \(p\)-series,
+\item apply the root test to analyze convergence, and
+\item apply the ratio test on a series involving powers,
+\item apply the ratio test on a series involving factorials,
+\item apply the ratio test on a series involving both factorials and powers,
+\end{itemize}
 
-What questions do you have about this topic?  What would you like to see addressed further?
-\begin{free-response}
-\end{free-response}
+\section{What are \(p\)-series?}
+
+A very important example of a series is a \(p\)-series, which just means a series of the form \[\sum_{n=1}^\infty \frac{1}{n^p}\] for some fixed \(p\).  We can show that a \(p\)-series converges when \(p > 1\) and diverges otherwise.
+
+\youtube{https://www.youtube.com/watch?v=RFB7QSrhgGs}
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{m=5}^\infty \left( \displaystyle\frac{7}{4 \, m^{1.64}} \right)\) converge or diverge?
+  
+  \begin{solution}
+    \begin{hint}
+      Note that \(\displaystyle\displaystyle\sum_{m=5}^\infty \left( \displaystyle\frac{7}{4 \, m^{1.64}} \right)\) converges iff \(\displaystyle\sum_{m=5} \displaystyle\frac{1}{m^{1.64}}\) converges.
+    \end{hint}
+    \begin{hint}
+      But \(\displaystyle\sum_{m=5} \displaystyle\frac{1}{m^{1.64}}\) is the tail of a \(p\)-series.
+    \end{hint}
+    \begin{hint}
+      In this case, \(p = 1.64\).
+    \end{hint}
+    \begin{hint}
+      Since \(p = 1.64 > 1\), we may conclude that the given series converges.
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{The series converges.}
+      \choice{The series diverges.}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+            
+
+\section{How can \(p\)-series be used with the comparison test?}
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{j=6}^\infty \left( \displaystyle\frac{j - 5}{j^{4.0} + 4 \, j^{3}} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      Set \(a_j = \displaystyle\frac{j - 5}{j^{4.0} + 4 \, j^{3}}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(a_j < \displaystyle\displaystyle\frac{j}{j^{4.0} + 4 \, j^{3}}\).
+    \end{hint}
+    \begin{hint}
+      Furthermore, \(a_j < \displaystyle\displaystyle\frac{j}{j^{4.0}}\) because removing the term from the denominator makes the fraction bigger.
+    \end{hint}
+    \begin{hint}
+      But now \(\displaystyle\displaystyle\frac{j}{j^{4.0}} = \displaystyle\displaystyle\frac{1}{j^{3}}\).
+    \end{hint}
+    \begin{hint}
+      So \(a_j < \displaystyle\displaystyle\frac{1}{j^{3}}\).
+    \end{hint}
+    \begin{hint}
+      But \(\displaystyle\sum_{j = 6}^\infty \displaystyle\displaystyle\frac{1}{j^{3}}\) converges.
+    \end{hint}
+    \begin{hint}
+      And so the original series converges.
+    \end{hint}
+    
+
+    \begin{multiple-choice}
+      \choice[correct]{The series converges.}
+      \choice{The series diverges.}
+      
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+\hrule
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=3}^\infty \left( \displaystyle\frac{n + 5}{n^{2} - n} \right)\) converge or diverge?
+  
+  \begin{solution}
+    \begin{hint}
+      Set \(a_n = \displaystyle\frac{n + 5}{n^{2} - n}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(a_n > \displaystyle\displaystyle\frac{n}{n^{2} - n}\).
+    \end{hint}
+    \begin{hint}
+      Furthermore, \(a_n > \displaystyle\displaystyle\frac{n}{n^{2}}\) because removing the term from the denominator makes the fraction smaller.
+    \end{hint}
+    \begin{hint}
+      But now \(\displaystyle\displaystyle\frac{n}{n^{2}} = \displaystyle\displaystyle\frac{1}{n}\).
+    \end{hint}
+    \begin{hint}
+      So \(a_n > \displaystyle\displaystyle\frac{1}{n}\).
+    \end{hint}
+    \begin{hint}
+      But \(\displaystyle\sum_{n = 3}^\infty \displaystyle\displaystyle\frac{1}{n}\) diverges.
+    \end{hint}
+    \begin{hint}
+      And so the original series diverges.
+    \end{hint}
+
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
 
 \end{document}

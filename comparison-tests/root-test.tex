@@ -1,0 +1,93 @@
+\documentclass{ximera}
+
+\title{Root test}
+
+\begin{document}
+
+\begin{abstract}
+  The root test begins by considering the limit of the n-th root of the n-th term.
+\end{abstract}
+
+\maketitle
+
+\section{What is the root test?}
+
+The root test is somewhat similar to the ratio test.  Again, suppose \(a_n > 0\) and you want to determine whether the series \(\sum_{n=1}^\infty a_n\) converges or diverges.  Compute \(L = \displaystyle\lim_{n\to\infty} \sqrt[n]{a_{n}}\), and if \(L &lt; 1\), the series converges, while if \(L > 1\), the series diverges.  If \(L = 1\), then the test is inconclusive.
+
+It is no secret that I do not think too highly of the ratio test.
+
+\yotube{https://www.youtube.com/watch?v=a5TGqoge7hA}
+
+Nevertheless, there are situations where the root test proves the convergence of a series for which the ratio test is silent.
+
+% Relevant video: root-test-useless
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=7}^\infty \left( \left(\displaystyle\frac{5 \, n + 4}{7 \, n + 8}\right)^{n} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      Let's set \(a_n = \left(\displaystyle\frac{5 \, n + 4}{7 \, n + 8}\right)^{n}\).
+    \end{hint}
+    \begin{hint}
+      This series involves powers of \(n\), so the ratio test might be helpful.
+    \end{hint}
+    \begin{hint}
+      So \(\displaystyle\displaystyle\frac{a_{n+1}}{a_n} = \displaystyle\frac{\left(\displaystyle\frac{5 \, n + 9}{7 \, n + 15}\right)^{n + 1}}{\left(\displaystyle\frac{5 \, n + 4}{7 \, n + 8}\right)^{n}}\).
+    \end{hint}
+    \begin{hint}
+      That does not look like a particularly fruitful path to go down; perhaps we could try the root test?
+    \end{hint}
+    \begin{hint}
+      Note that \(\sqrt[n]{a_{n}} = \displaystyle\frac{5 \, n + 4}{7 \, n + 8}\).
+    \end{hint}
+    \begin{hint}
+      We calculate \(\lim_{n \to \infty} \displaystyle\frac{5 \, n + 4}{7 \, n + 8} = \displaystyle\frac{5}{7}\).
+    \end{hint}
+    \begin{hint}
+      So \(L = \displaystyle\frac{5}{7}\).
+    \end{hint}
+    \begin{hint}
+      Since \(L < 1\), we may conclude by the root test that the given series coverges.
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{The series converges.}
+      \choice{The series diverges.}
+    \end{multiple-choice}
+  \end{solution}
+
+\end{question}
+            
+
+
+<h4>What are \(p\)-series?</h4>
+
+<p>A very important example of a series is a \(p\)-series, which just means a series of the form \[\sum_{n=1}^\infty \frac{1}{n^p}\] for some fixed \(p\).  We can show that <%= linkto_video('p-series','a \(p\)-series converges when \(p > 1\) and diverges otherwise') %>.  
+This is <%= linkto_textbook('thm:p-series') %>, but you can also find a discussion using condensation in <%= linkto_textbook('subsection:p-series') %>.</p>
+
+<img style="float: right; margin-left: 12pt;" class="img-thumbnail" src="https://d396qusza40orc.cloudfront.net/sequence%2Fimages%2Flogo.png">
+
+<h4>How large can the overhang in a stack of blocks be?</h4>
+
+<p>One of the more unusual &ldquo;applications&rdquo; of the harmonic series is <%= linkto_video('harmonic-tower','using it to build towers of blocks') %>; this is the same object that appears in our course logo.  I also made a <a href="http://www.youtube.com/watch?v=I3ilNAcjNng"><i class="icon-facetime-video"></i>&nbsp;video of the block tower on YouTube</a> if you want to see it from a different angle.</p>
+
+<div style="clear: both;"></div>
+
+<hr/>
+
+<h4>By the end of the week&hellip;</h4>
+
+<p>I have some learning objectives for you.  At the end of this week, I hope you will be able to</p>
+<ul>
+<li>apply the ratio test on a <%= linkto_video('ratio-test-example','series involving powers' )%>,</li>
+<li>apply the ratio test on a <%= linkto_video('ratio-test-statement','series involving factorials')%>,</li>
+<li>apply the ratio test on a <%= linkto_video('ratio-test-one-over-e','series involving both factorials and powers') %>,</li>
+<li>identify a <%= linkto_video('p-series','\(p\)-series') %>,</li>
+<li>compare a <%= linkto_video('reciprocal-n-log-n','series to a \(p\)-series') %>,</li>
+<li>apply the <%= linkto_video('root-test-useless','root test') %> to analyze convergence, and</li>
+<li>bound the value of a series by using the <%= linkto_video('integral-test','integral test') %>.</li>
+</ul>
+<p>When you feel ready, you can <a href="/sequence-001/quiz/attempt?quiz_id=77"><i class="icon-pencil"></i>&nbsp;work on the homework</a>.  The homework is &ldquo;formative assessment&rdquo; meaning I intend the homework as a teaching tool, not to determine your &ldquo;score&rdquo; in the course.  So please, use the hints when you get stuck.  Discuss freely on the forums.  Do the homework again and again&mdash;the problems are randomly generated.  Feel free to use the provided resources in whatever way helps you to understand the material.  You can master this material!</p>
+
+\end{document}

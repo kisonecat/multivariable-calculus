@@ -1,0 +1,97 @@
+\documentclass{ximera}
+
+\title{Absolute convergence}
+
+\begin{document}
+
+\begin{abstract}
+  To consider absolute convergence of a series is to consider the convergence of the series where each term is replaced by its absolute value.
+\end{abstract}
+
+\maketitle
+
+\section{What is absolute convergence?}
+
+Our goal is to consider the convergence of \(\sum_{n=1}^\infty a_n\) when some of the terms in the sequence \((a_n)\) are positive, and some are negative.  One way to simplify this is to first consider \(\sum_{n=1}^\infty |a_n|\) which is a series in which all the terms are nonnegative---exactly the sort of series we have had a ton of experience with.  If \(\sum_{n=1}^\infty |a_n|\) converges, we say that the original series \(\sum_{n=1}^\infty a_n\) converges absolutely.
+
+\youtube{https://www.youtube.com/watch?v=eE1xSAgiHvU}
+
+\begin{theorem}
+Absolute convergence implies convergence.
+\end{theorem}
+This means that if \(\sum_{n=1}^\infty |a_n|\) converges, then we can conclude that the more difficult to study series \(\sum_{n=1}^\infty a_n\) converges as well. 
+
+\youtube{https://www.youtube.com/watch?v=uZVZ7chhqqg}
+
+\begin{warning}
+The converse is not true!
+\end{warning}
+
+Just because \(\sum_{n=1}^\infty |a_n|\) diverges does not mean \(\sum_{n=1}^\infty a_n\) necessarily diverges; this situation is referred to as conditional convergence.
+
+\youtube{https://www.youtube.com/watch?v=OGzsP1cUKkA}
+
+% Relevant video: absolute-convergence
+            \begin{question}
+              Suppose \((a_n)\) is a sequence involving both positive and negative numbers, and suppose that the series \(\displaystyle\sum_{n=1}^\infty |a_n|\) converges.  What can be known for certain about the series \(\displaystyle\sum_{n=1}^\infty a_n\)?
+              \begin{solution}
+                \begin{hint}
+                  We are told that \(\displaystyle\sum_{n=1}^\infty |a_n|\) converges, which means that the series is absolutely convergent.
+                \end{hint}
+                \begin{hint}
+                  Since \(\displaystyle\sum_{n=1}^\infty |a_n|\) converges, so too does \(\displaystyle\sum_{n=1}^\infty 2|a_n|\).
+                \end{hint}
+                \begin{hint}
+                  But note that \(0 \leq a_n+|a_n| \leq 2|a_n|\).
+                \end{hint}
+                \begin{hint}
+                  Consequently, by the comparison test, the series \(\displaystyle\sum_{n=1}^\infty \left( a_n + |a_n| \right)\) converges, since it has nonnegative terms and is smaller termwise than the convergent series \(\displaystyle\sum_{n=1}^\infty 2|a_n|\).
+                \end{hint}
+                \begin{hint}
+                  Consider \(\displaystyle\sum_{n=1}^\infty (a_n+|a_n|) -\displaystyle\sum_{n=1}^\infty |a_n|\).
+                \end{hint}
+                \begin{hint}
+                  This is a difference of convergent series.
+                \end{hint}
+                \begin{hint}
+                  So \(\displaystyle\sum_{n=1}^\infty (a_n+|a_n|) -\displaystyle\sum_{n=1}^\infty |a_n| = \displaystyle\sum_{n=1}^\infty \left( a_n+|a_n|-|a_n| \right)\) converges.
+                \end{hint}
+                \begin{hint}
+                  But that is just to say that \(\displaystyle\sum_{n=1}^\infty \left( a_n+|a_n|-|a_n| \right) = \displaystyle\sum_{n=1}^\infty a_n \) converges.
+                \end{hint}
+                \begin{hint}
+                  So we conclude that the series \(\displaystyle\sum_{n=1}^\infty a_n \) converges.
+                \end{hint}
+                \begin{hint}
+                  This is usually stated as a theorem: absolute convergence implies convergence.
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{The series \(\displaystyle\sum_{n=1}^\infty a_n\) converges.}
+                \choice{The series \(\displaystyle\sum_{n=1}^\infty a_n\) diverges.}
+                \choice{The series \(\displaystyle\sum_{n=1}^\infty a_n\) converges conditionally.}
+                \choice{The series \(\displaystyle\sum_{n=1}^\infty a_n\) may converge or diverge.}
+                \choice{The series \(\displaystyle\sum_{n=1}^\infty a_n\) converges to a positive value.}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+
+\textbf{tl;dr:} You should check for conditional convergence by first checking absolute convergence, and then if you find the series is not absolutely convergent, you can consider convergence of the original series.
+
+\youtube{https://www.youtube.com/watch?v=t4Qm3sb4zBA}
+
+\section{Conditional convergence is terrible.}
+
+A key point to emphasize is just how terrible conditional convergence really is. \href{ http://en.wikipedia.org/wiki/Riemann_series_theorem}{If you rearrange the terms in a conditionally convergence theorem, you can get any value you desire.}
+
+The alternating harmonic series \(\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n}\) is a context within which to consider this rearrangement theorem.
+
+\youtube{https://www.youtube.com/watch?v=7oWMaNg4Ezw}
+
+The upshot is that a series \textbf{must be added up in order} since the answer---in the case of conditional convergence---depends very much on the order in which the addition is performed.  \textit{Be afraid!}
+
+\end{document}
