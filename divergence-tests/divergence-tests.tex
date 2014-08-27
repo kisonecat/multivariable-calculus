@@ -23,8 +23,133 @@
 %   \end{solution}
 % \end{question}
 
-What questions do you have about this topic?  What would you like to see addressed further?
-\begin{free-response}
-\end{free-response}
+- title
+
+\section{Why does $\sum n/(n+1)$ diverge?}
+
+\youtube{https://www.youtube.com/watch?v=HvQrSigs8bA}
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{{\left(7 \, n + 8\right)} {\left(7 \, n + 4\right)}}{{\left(4 \, n + 3\right)} {\left(3 \, n + 1\right)}} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      The first thing we should do when confronted with an unknown series is check the limit of the terms.
+    \end{hint}
+    \begin{hint}
+      Recall that if the series converges, then the limit must exist and be equal to zero.
+    \end{hint}
+    \begin{hint}
+      So if the limit does not exist or is not zero, then the series diverges.
+    \end{hint}
+    \begin{hint}
+      In this case, we consider \(\displaystyle\lim_{n \to \infty} \displaystyle\frac{{\left(7 \, n + 8\right)} {\left(7 \, n + 4\right)}}{{\left(4 \, n + 3\right)} {\left(3 \, n + 1\right)}}\).
+    \end{hint}
+    \begin{hint}
+      Let's multiply by a &ldquo;disguised version of one,&rdquo; meaning \(\displaystyle\lim_{n \to \infty} \displaystyle\frac{{\left(7 \, n + 8\right)} {\left(7 \, n + 4\right)}}{{\left(4 \, n + 3\right)} {\left(3 \, n + 1\right)}} \cdot \displaystyle\frac{1/n^{2}}{1/n^{2}}\).
+    \end{hint}
+    \begin{hint}
+      Expanding the numerator and denominator yields \(\displaystyle\lim_{n \to \infty} \displaystyle\frac{\displaystyle\frac{49 \, n^{2} + 84 \, n + 32}{n^{2}}}{\displaystyle\frac{12 \, n^{2} + 13 \, n + 3}{n^{2}}}\).
+    \end{hint}
+    \begin{hint}
+      Dividing through by \(n^{2}\) gives \(\displaystyle\lim_{n \to \infty} \displaystyle\frac{\displaystyle\frac{84}{n} + \displaystyle\frac{32}{n^{2}} + 49}{\displaystyle\frac{13}{n} + \displaystyle\frac{3}{n^{2}} + 12}\).
+    \end{hint}
+    \begin{hint}
+      Note then that \(\displaystyle\lim_{n \to \infty} \displaystyle\frac{\displaystyle\frac{84}{n} + \displaystyle\frac{32}{n^{2}} + 49}{\displaystyle\frac{13}{n} + \displaystyle\frac{3}{n^{2}} + 12} = \displaystyle\frac{49}{12}\).
+    \end{hint}
+    \begin{hint}
+      But \(\displaystyle\frac{49}{12} \neq 0\), and so, this series must diverge.
+      
+    \end{hint}
+    
+    
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\begin{question}
+  Does the series \(\displaystyle\sum_{n=5}^\infty \left( -6 \, \left(\displaystyle\frac{10}{9}\right)^{n} \right)\) converge or diverge?
+
+  \begin{solution}
+    \begin{hint}
+      This is a geometric series.
+    \end{hint}
+    \begin{hint}
+      Note that the common ratio between subsequent terms is \(r = \displaystyle\frac{10}{9}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(|r| \geq 1\).
+    \end{hint}
+    \begin{hint}
+      Consequently, the series diverges.
+      
+    \end{hint}
+    
+
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+\section{Does $\sum 1/n$ converge or diverge?}
+
+\youtube{https://www.youtube.com/watch?v=_Ui5_-lIK34}
+
+% Relevant video: harmonic-series
+\begin{question}
+  Does the series \(\displaystyle\sum_{j=0}^\infty \left( \displaystyle\frac{8}{7 \, j + 42} \right)\) converge or diverge?
+  
+  \begin{solution}
+    \begin{hint}
+      This series resembles the harmonic series \(\displaystyle\displaystyle\sum_{n=1}^\infty \displaystyle\displaystyle\frac{1}{n}\).
+    \end{hint}
+    \begin{hint}
+      Recall that \(\displaystyle\displaystyle\sum_{n=1}^\infty (c \, a_n) = c \displaystyle\displaystyle\sum_{n=1}^\infty a_n\) when \(\displaystyle\displaystyle\sum_{n=1}^\infty a_n\) converges.
+    \end{hint}
+    \begin{hint}
+      When \(\displaystyle\displaystyle\sum_{n=1}^\infty a_n\) diverges, so does \(\displaystyle\displaystyle\sum_{n=1}^\infty (c \, a_n)\) provided \(c \neq 0\).
+    \end{hint}
+    \begin{hint}
+      Let's use \(c = \displaystyle\frac{7}{8}\) in this case.
+    \end{hint}
+    \begin{hint}
+      Then the series \(\displaystyle\sum_{j=0}^\infty \left( \displaystyle\frac{8}{7 \, {\left(j + 6\right)}} \right)\) converges exactly when \(\displaystyle\sum_{j=0}^\infty \displaystyle\frac{7}{8} \left( \displaystyle\frac{8}{7 \, {\left(j + 6\right)}} \right)\) converges.
+    \end{hint}
+    \begin{hint}
+      Simplifying, \(\displaystyle\sum_{j=0}^\infty \left( \displaystyle\frac{8}{7 \, {\left(j + 6\right)}} \right)\) converges exactly when \(\displaystyle\sum_{j=0}^\infty \left( \displaystyle\frac{1}{j + 6} \right)\) converges.
+    \end{hint}
+    \begin{hint}
+      But the terms of \(\displaystyle\sum_{j=0}^\infty \left( \displaystyle\frac{1}{j + 6} \right)\) are just the tail of the divergent harmonic series!
+    \end{hint}
+    \begin{hint}
+      So the series \(\displaystyle\sum_{j=0}^\infty \left( \displaystyle\frac{8}{7 \, {\left(j + 6\right)}} \right)\) diverges.
+      
+    \end{hint}
+    
+    \begin{multiple-choice}
+      \choice[correct]{The series diverges.}
+      \choice{The series converges.}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\section{How can integrating help us to address convergence?}
+
+\youtube{https://www.youtube.com/watch?v=JkRL4s80KrU}
+
+\section{How can integrating help analyze $\sum 1/n$?}
+
+\youtube{https://www.youtube.com/watch?v=TODKCEjmN_4}
+
 
 \end{document}

@@ -18,3 +18,5 @@ sequences/sequences
     sequences/features/monotonicity
     sequences/features/boundedness
     sequences/features/monotone-convergence
+series/series
+divergence-tests/divergence-tests

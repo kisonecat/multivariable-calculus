@@ -10,21 +10,143 @@
 
 \maketitle
 
-% \begin{question}
-%   What is the correct answer to this question?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{What does $\displaystyle\sum a_k = L$ mean?}
+\youtube{https://www.youtube.com/watch?v=2i8XQrjCai4}
 
-%   \begin{solution}
-%     \begin{multiple-choice}
-%       \choice[correct]{Correct answer}
-%       \choice{First Distractor}
-%       \choice{Second Distractor}
-%       \choice{Third Distractor}
-%     \end{multiple-choice}  
-%   \end{solution}
-% \end{question}
+\begin{question}
+  To say that \(\displaystyle\displaystyle\sum_{k=4}^\infty a_k = L\) means what?  In order words, what does it mean to say that the &ldquo;value&rdquo; of a series is \(L\)?
+  \begin{solution}
+    \begin{hint}
+      We are trying to make precise the idea that, by adding up sufficiently many of the terms of the sequence \(a_k\), we can get as close to \(L\) as desired.
+    \end{hint}
+    \begin{hint}
+      We consider the sequence of partial sums, \((s_n)\).
+    \end{hint}
+    \begin{hint}
+      For this course, the term \(s_n\) is the sum of the terms through index \(n\).  Be warned though some people might define it differently: in some texts, the term \(s_n\) may be the sum of the first \(n\) terms.
+    \end{hint}
+    \begin{hint}
+      So \(s_n = \displaystyle\displaystyle\sum_{k=4}^n a_k\).
+    \end{hint}
+    \begin{hint}
+      To say that we can get as close as desired to \(L\) by adding up many terms is to say that \(s_n\) is as close as desired to \(L\) whenever \(n\) is large enough.
+    \end{hint}
+    \begin{hint}
+      This is saying that the sequence \(s_n\) converges to \(L\).
+    \end{hint}
+    \begin{hint}
+      So to say that \(\displaystyle\displaystyle\sum_{k=4}^\infty a_k = L\) means that the sequence of partial sums \(s_n = \displaystyle\displaystyle\sum_{k=4}^n a_k \) converges to \(L\).
+      
+    \end{hint}
+    
+    
+    \begin{multiple-choice}
+      \choice[correct]{The sequence of partial sums \(s_n = \displaystyle\displaystyle\sum_{k=4}^n a_k \) converges to \(L\).}
+      \choice{The sequence of partial sums \(s_n = \displaystyle\displaystyle\sum_{k=n}^\infty a_k \) converges to \(L\).}
+      \choice{The sequence of partial sums \(s_n = \displaystyle\displaystyle\sum_{k=4}^n a_n \) converges to \(L\).}
+      \choice{The sequence of partial sums \(s_n = \displaystyle\displaystyle\sum_{k=1}^n a_k \) converges to \(L\).}
+      \choice{The sequence of partial sums \(s_n = \displaystyle\displaystyle\sum_{k=1}^n a_k \) is bounded by \(L\).}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
 
-What questions do you have about this topic?  What would you like to see addressed further?
-\begin{free-response}
-\end{free-response}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Geometric series}
+
+What does $\displaystyle\sum_{k=0}^\infty (1/2)^k$ equal?
+
+\youtube{https://www.youtube.com/watch?v=d9ewMEXRqmY}
+
+What is the value of $\sum_{k=0}^\infty r^k$?
+
+\youtube{https://www.youtube.com/watch?v=bcvAGpm0ANY}
+
+What is the value of $\displaystyle\sum_{k=m}^\infty r^k$?
+
+\youtube{https://www.youtube.com/watch?v=IU6ShMXtSe8}
+
+\begin{question}
+  Evaluate \(\displaystyle\sum_{n=2}^\infty \left(\displaystyle\frac{1}{2}\right)^{n}\).
+
+  \begin{solution}
+    \begin{hint}
+      A basic formula to evaluate a geometric series is \(\displaystyle\sum_{n=0}^\infty r^{n} = \displaystyle\frac{1}{1-r}\).
+    \end{hint}
+    \begin{hint}
+      But this series does not start with \(n=0\), so we multiply both sides by \(r^{2}\) to get  \(\displaystyle\sum_{n=2}^\infty r^{n} = \displaystyle\frac{r^{2}}{1-r}\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(r = \displaystyle\frac{1}{2}\), so \(\displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{1}{2} \right)^{n} = \displaystyle\frac{\left( \displaystyle\frac{1}{2} \right)^{2}}{1-\left(\displaystyle\frac{1}{2}\right)}\).
+    \end{hint}
+    \begin{hint}
+      Evaluating this expression, we find \(\displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{1}{2} \right)^{n} = \displaystyle\frac{1}{2}\).
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{\(\displaystyle\frac{1}{2}\)}
+      \choice{\(-\displaystyle\frac{1}{65610}\)}
+      \choice{\(\displaystyle\frac{1}{6}\)}
+      \choice{\(\displaystyle\frac{1}{768}\)}
+      \choice{\(\displaystyle\frac{1}{16}\)}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\section{Telescoping series}
+
+What is $\displaystyle\sum_{k=1}^\infty \frac{1}{(k+1)k}$?
+
+\youtube{https://www.youtube.com/watch?v=f2vnyzCNX3M}
+
+\begin{question}
+  Evaluate \(\displaystyle\sum_{n=3}^\infty \displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14}\).
+
+  \begin{solution}
+    \begin{hint}
+      As the title says, this is a telescoping series.
+    \end{hint}
+    \begin{hint}
+      So we should try to rewrite \(\displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14}\) as \(a_{n} - a_{n+1}\).
+    \end{hint}
+    \begin{hint}
+      The denominator \(25 \, n^{2} + 45 \, n + 14\) factors as \({\left(5 \, n + 7\right)} {\left(5 \, n + 2\right)}\).
+    \end{hint}
+    \begin{hint}
+      So we can write \(\displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14}\) as \(a_{n} - a_{n+1}\) where \(a_{n} = \displaystyle\frac{5}{5 \, n + 2}\).
+    \end{hint}
+    \begin{hint}
+      Therefore \(\displaystyle\sum_{n=3}^\infty \displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14} = \displaystyle\sum_{n=3}^\infty \left( a_{n} - a_{n+1} \right)\).
+    \end{hint}
+    \begin{hint}
+      This is a telescoping series, so \(\displaystyle\sum_{n=3}^\infty \displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14} = a_{3} - \lim_{n \to \infty} a_{n}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(\lim_{n \to \infty} \displaystyle\frac{5}{5 \, n + 2} = 0\), so \(\lim_{n \to \infty} a_{n} = 0\).
+    \end{hint}
+    \begin{hint}
+      So \(\displaystyle\sum_{n=3}^\infty \displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14} = a_{3}\).
+    \end{hint}
+    \begin{hint}
+      Specifically then, \(\displaystyle\sum_{n=3}^\infty \displaystyle\frac{25}{25 \, n^{2} + 45 \, n + 14} = \displaystyle\frac{5}{17}\).
+    \end{hint}
+    
+    \begin{multiple-choice}
+      \choice[correct]{\(\displaystyle\frac{5}{17}\)}
+      \choice{\(1\)}
+      \choice{\(\displaystyle\frac{1}{10}\)}
+      \choice{\(\displaystyle\frac{1}{8}\)}
+      \choice{\(\displaystyle\frac{1}{7}\)}
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+            
+
 
 \end{document}
