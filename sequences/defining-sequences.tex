@@ -1,0 +1,161 @@
+\documentclass{ximera}
+
+\title{Defining sequences}
+
+\newcommand{\defnword}[1]{\textbf{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\nth}{\mbox{\scriptsize th}}
+\renewcommand{\index}[1]{}
+
+\begin{document}
+
+\begin{abstract}
+  Sequences can be defined via a rule or recursively.
+\end{abstract}
+
+\maketitle
+
+\subsection{Defining sequences by giving a rule}
+
+Just as real-valued functions from Calculus One were usually expressed
+by a formula, we will most often encounter sequences that can be
+expressed by a formula.  In the Introduction to this textbook, we saw
+the sequence given by the rule $\ds a_i=f(i)=1-1/2^i$.  Other examples
+are easy to cook up, like
+\begin{align*}
+  a_i &={i\over i+1}, \\
+  b_n &={1\over2^n}, \\
+  c_n &=\sin(n\pi/6), \mbox{ or} \\
+  d_i &={(i-1)(i+2)\over2^i}. \\
+\end{align*}
+Frequently these formulas will make sense if thought of either as
+functions with domain $\R$ or $\N$, though occasionally the given
+formula will make sense only for integers.  We'll address the
+idea of a real-valued function ``filling in'' the gaps between the
+terms of a sequence when we look at graphs in
+Section~\xrefn{section:graphs}.
+
+\begin{warning}
+  A common misconception is to confuse the sequence with the rule for
+  generating the sequence.  The sequences $(a_n)$ and $(b_n)$ given by
+  the rules $a_n = (-1)^n$ and $b_n = \cos (\pi \, n)$ are, despite
+  appearances, different rules which give rise to the \textit{same}
+  sequence.  These are just different names for the same object.
+\end{warning}
+
+Let's give a precise definition for ``the same'' when speaking of
+sequences.  Compare this to equality for functions: two functions are
+the same if they have same domain and codomain, and they assign the
+same value to each point in the domain.
+
+\youtube{https://www.youtube.com/watch?v=5f5-d3uiYxo}
+
+\begin{definition}
+  Suppose $(a_n)$ and $(b_n)$ are sequences starting at $1$.  These
+  sequences are \defnword{equal}\index{sequence!equality} if for all
+  natural numbers $n$, we have $a_n = b_n$.
+
+  More generally, two sequences $(a_n)$ and $(b_n)$ are
+  \defnword{equal} if they have the same initial index $N$, and for
+  every integer $n \geq N$, the $n^{\nth}$ terms have the same value, that is,
+  \[
+  a_n = b_n \quad \mbox{for all $n \geq N$.}
+  \]
+\end{definition}
+In other words, sequences are the same if they have the same set of
+valid indexes, and produce the same real numbers for each of those
+indexes---regardless of whether the given ``rules'' or procedures for
+computing those sequences resemble each other in any way.
+
+\subsection{Defining sequences using previous terms}
+\label{subsection:recursive-definition}
+
+Another way to define a sequence is \textit{recursively}, that is, by
+defining the later outputs in terms of previous outputs.  We start by
+defining the first few terms of the sequence, and then describe how
+later terms are computed in terms of previous terms.
+
+\begin{example}
+Define a sequence recursively by
+$$
+a_1 = 1, \quad a_2 = 3, \quad a_3 = 10,
+$$
+and the rule that $a_n = a_{n-1} - a_{n-3}$.  Compute $a_5$.
+\end{example}
+
+\begin{worked-solution}
+  First we compute $a_4$.  Substituting $4$ for $n$ in the rule $a_n = a_{n-1} - a_{n-3}$, we find
+$$
+a_4 = a_{4-1} - a_{4-3} = a_3 - a_1.
+$$
+But we have values for $a_3$ and $a_1$, namely $10$ and $1$, respectively.  Therefore $a_4 = 10 - 1 = 9$.
+
+Now we are in a position to compute $a_5$.  Substituting $5$ for $n$ in the rule $a_n = a_{n-1} - a_{n-3}$, we find
+$$
+a_5 = a_{5-1} - a_{5-3} = a_4 - a_2.
+$$
+We just computed $a_4 = 9$; we were given $a_2 = 3$.  Therefore $a_5 = 9 - 3 = 6$.
+\end{worked-solution}
+
+\youtube{http://www.youtube.com/watch?v=Krqi7UGJV5o}
+
+\begin{question}
+  Consider the sequence \(a_{n}\) defined recursively by the
+  rule \[a_n = {a_{n-1}} {a_{n-2}} + 3 \, {a_{n-1}} - {a_{n-2}}\] and
+  the facts that \(a_0 = -3\) and \(a_1 = 5\).  What is \(a_4\)?
+
+  \begin{solution}
+    \begin{hint}
+      We have been told the first two terms of the sequence, namely \(a_0 = -3\) and \(a_1 = 5\).
+    \end{hint}
+    \begin{hint}
+      We also have a rule \(a_n = {a_{n-1}} {a_{n-2}} + 3 \, {a_{n-1}} - {a_{n-2}}\) which lets us compute the third term \(a_2\) using these first two terms \(a_0\) and \(a_1\).
+    \end{hint}
+    \begin{hint}
+      To compute \(a_2\), we set \(n = 2\) in the recursive rule \(a_n = {a_{n-1}} {a_{n-2}} + 3 \, {a_{n-1}} - {a_{n-2}}\).  This gives us \(a_2 = {a_{2-1}} {a_{2-2}} + 3 \, {a_{2-1}} - {a_{2-2}}\).
+    \end{hint}
+    \begin{hint}
+      Plugging \(a_{2-1} = a_{1} = 5\) and \(a_{2-2} = a_{0} = -3\) into the rule, we learn \(a_2 = 3\).
+    \end{hint}
+    \begin{hint}
+      To compute \(a_3\), we set \(n = 3\) in the recursive rule \(a_n = {a_{n-1}} {a_{n-2}} + 3 \, {a_{n-1}} - {a_{n-2}}\), giving \(a_3 = {a_{3-1}} {a_{3-2}} + 3 \, {a_{3-1}} - {a_{3-2}}\).
+    \end{hint}
+    \begin{hint}
+      To evaluate that, we will have to know \(a_{3-1} = a_{2}\), but we just found out that \(a_{2} = 3\).
+    \end{hint}
+    \begin{hint}
+      Plugging \(a_{3-1} = 3\) and \(a_{3-2} = a_{1} = 5\) into the rule, we find \(a_3 = 19\).
+    \end{hint}
+    \begin{hint}
+      To compute \(a_4\), we set \(n = 4\) in the recursive rule \(a_n = {a_{n-1}} {a_{n-2}} + 3 \, {a_{n-1}} - {a_{n-2}}\), giving \(a_4 = {a_{4-1}} {a_{4-2}} + 3 \, {a_{4-1}} - {a_{4-2}}\).
+    \end{hint}
+    \begin{hint}
+      To evaluate that, we will have to know \(a_{4-1} = a_{3}\), but we just found out that \(a_{3} = 19\).
+    \end{hint}
+    \begin{hint}
+      Plugging \(a_{4-1} = 19\) and \(a_{4-2} = a_{2} = 3\) into the rule, we learn \(a_4 = 111\).
+    \end{hint}
+    \begin{hint}
+      So we conclude \(a_4 = 111\).
+    \end{hint}
+
+    \begin{multiple-choice}
+      \choice[correct]{\(111\)}
+      \choice{\(176201\)}
+      \choice{\(-40\)}
+      \choice{\(-654016\)}
+      \choice{\(2522\)}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

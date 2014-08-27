@@ -1,0 +1,95 @@
+\documentclass{ximera}
+
+\title{Geometric progressions}
+
+\newcommand{\defnword}[1]{\textbf{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\nth}{\mbox{\scriptsize th}}
+\renewcommand{\index}[1]{}
+
+\begin{document}
+
+\begin{abstract}
+  In a geometric progression, the ratio between subsequent terms is
+  a fixed quantity.
+\end{abstract}
+
+\maketitle
+
+The second family we consider are geometric progressions.
+
+\youtube{https://www.youtube.com/watch?v=1z8QKFFU3Hc}
+
+\begin{definition}
+  A \defnword{geometric progression} (sometimes called a geometric
+  sequence)\index{geometric progression} is a sequence where the ratio
+  between subsequent terms is the same, fixed quantity.
+\end{definition}
+
+\begin{example}
+  An example of a geometric progression is the sequence $(a_n)$ starting
+  $$
+  a_1 = 10, \quad a_2 = 30, \quad a_3 = 90, \quad a_4 = 270, \quad\ldots
+  $$
+  and given by the rule $a_n = 10 \cdot 3^{n-1}$.  Each term is three
+  times the preceding term.
+\end{example}
+
+In general, a geometric progression in which the ratio between
+subsequent terms is $r$ can be written as
+$$
+a_n = a_1 \cdot r^{n-1}.
+$$
+Alternatively, we could describe a geometric progression
+recursively, by giving a starting value $a_1$, and using the rule that
+$a_{n} = r \cdot a_{n-1}$.
+
+%\marginnote{Why are geometric progressions called \textit{geometric?}  Note that every term is the \defnword{geometric mean} of its two neighbors.  The geometric mean of two numbers $a$ and $b$ is defined to be $\sqrt{ab}$.
+
+Of course, that raises another question: why is the geometric mean called \textit{geometric?}  One geometric interpretation of the geometric mean of $a$ and $b$ is this: the geometric mean is the side length of a square whose area is equal to that of the rectangle having side lengths $a$ and $b$.}
+
+A geometric progression needn't be increasing.  For instance, in the following geometric progression
+$$
+\frac{7}{5}, \quad \frac{7}{10}, \quad \frac{7}{20}, \quad \frac{7}{40}, \quad \frac{7}{80}, \quad \frac{7}{160}, \quad\ldots
+$$
+the ratio between subsequent terms is one half, and each term is smaller than the previous.
+
+\begin{question}
+  Which of the following could be the initial terms of a geometric progression?
+              
+  \begin{solution}
+    \begin{hint}
+      In a geometric progression, there is a common ratio between any two neighboring terms.
+    \end{hint}
+    \begin{hint}
+      For instance, the ratio between \(-64\) and \(16\) is \(-4\).
+    \end{hint}
+    \begin{hint}
+      Can \(1,  -4,  16,  -48,  192,  -768 \) be the beginning of a geometric progression?  No, because the ratio between most of those terms is \(-4\), but \(16\) and \(-48\) break the pattern: the ratio \(\displaystyle\displaystyle\frac{-48}{16}\) is -3, not -4.
+    \end{hint}
+    \begin{hint}
+      Can \(1,  -4,  16,  -64,  320,  -1280 \) be the beginning of a geometric progression?  No, because the ratio between most of those terms is \(-4\), but \(-64\) and \(320\) break the pattern: the ratio \(\displaystyle\displaystyle\frac{320}{-64}\) is -5, not -4.
+    \end{hint}
+    \begin{hint}
+      Can \(1,  -4,  16,  -64,  256,  -1280 \) be the beginning of a geometric progression?  No, because the ratio between most of those terms is \(-4\), but \(256\) and \(-1280\) break the pattern: the ratio \(\displaystyle\displaystyle\frac{-1280}{256}\) is -5, not -4.
+    \end{hint}
+    \begin{hint}
+      Can \(1,  -4,  16,  -64,  256,  -1024 \) be the beginning of a geometric progression?  Yes, because the ratio between each neighboring pair of terms is \(-4\).  For example, 
+      \(\displaystyle\displaystyle\frac{16}{-4} = \displaystyle\displaystyle\frac{-64}{16} = \displaystyle\displaystyle\frac{256}{-64} = -4\).
+    \end{hint}
+
+    \begin{multiple-choice}
+      \choice[correct]{\(1,\quad -4,\quad 16,\quad -64,\quad 256,\quad -1024,\quad\ldots \)}
+      \choice{\(1,\quad -5,\quad 20,\quad -80,\quad 320,\quad -1280,\quad\ldots \)}
+      \choice{\(1,\quad -4,\quad 20,\quad -80,\quad 320,\quad -1280,\quad\ldots \)}
+      \choice{\(1,\quad -4,\quad 16,\quad -48,\quad 192,\quad -768,\quad\ldots \)}
+      \choice{\(1,\quad -4,\quad 16,\quad -64,\quad 320,\quad -1280,\quad\ldots \)}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+
+\end{document}
