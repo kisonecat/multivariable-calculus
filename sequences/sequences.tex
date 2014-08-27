@@ -14,62 +14,60 @@ Let's dive into our first topic of study: sequences.
 
 First off, welcome to the course!  My name is \href{http://kisonecat.com/}{Jim Fowler}, and I am very glad that you are here.
 
+When you are thinking about sequences, I have some goals for you to aspire to.  I'd like you to be able to
+\begin{itemize}
+\item compute terms of a sequence presented as a recursive formula,
+\item define and compute limits of sequences,
+\item find a sufficiently large index to guarantee a sequence is within \(\epsilon\) of \(L\),
+\item define what it means for a sequence to be bounded and determine when a sequence is bounded,
+\item identify an arithmetic progression,
+\item identify a geometric progression,
+\item identify a monotonic sequence, and
+\item apply the monotone convergence theorem.
+\end{itemize}
 
+\hrule
 
-% Since a sequence can be written down in different ways, <%= linkto_video('sequence-equality','it can be hard to tell when two sequences are the same') %>.</p>
+\section{Summary}
 
-% <h4>What are some examples of sequences?</h4>
+You can find all the videos I prepared on this topic by going to \href{https://www.youtube.com/playlist?list=PLjOkVtsM_edJgB9yG6fRb5VXsoSxQN0L5}{my YouTube channel}.
 
-% <p>There are <%= linkto_video('new-sequences-from-old','a ton of interesting sequences to consider') %>.  Many examples are given in <%= linkto_textbook('section:examples') %>, including <%= linkto_video('arithmetic-progression','arithmetic progressions') %> and  <%= linkto_video('geometric-progression','geometric progressions') %>.</p>
+\subsection{What are some examples?}
 
+There are a ton of interesting sequences to consider; important examples include arithmetic progressions and geometric progressions.
 
+\subsection{What is the limit of a sequence?}
 
-% <h4>What is the limit of a sequence?</h4>
+If you have got a list of numbers, a natural question is whether that list of numbers is getting close to anything in particular; this is the idea behind the limit of a sequence.  The precise definition of limit---in terms of \(\epsilon\) and \(N\)---can seem very complicated.  It can help to think through some concrete examples where we can determine how large \(N\) needs to be for a given \(\epsilon\).
 
-% <p>If you have got a list of numbers, a natural question is whether that list of numbers is getting close to anything in particular; this is the idea behind <%= linkto_video('sequence-limit','the limit of a sequence') %>, which is the topic of <%= linkto_textbook('section:limits') %>.  We can <%= linkto_video('visual-limit','think about this visually') %> or graphically, as in <%= linkto_textbook('section:graphs') %>.</p>
+There are plenty of examples where this can be quite difficult to do.
 
-% <p>The precise definition of limit&mdash;in terms of \(\epsilon\) and \(N\)&mdash;can seem very complicated.  It can help to think through some concrete examples where <%= linkto_video('n-for-epsilon','we can determine how large \\(N\\) needs to be for a given \\(\\epsilon\\)') %>.</p>
+\youtube{https://www.youtube.com/watch?v=X_v9Y3jLrfA}
 
-% <h4>Why do we care?</h4>
+\subsection{Why do we care about any of this?}
 
-% <p>Much of what we are doing this week is setting up machinery that we'll make use of in the future.  This week is something like the &ldquo;functions&rdquo; week in Calculus One: we're just introducing terminology that we'll make use of later.  But already there are reasons to care: we can, for instance, <%= linkto_video('sequence-motivation','use sequences to approximate \\(\\sqrt{2}\\)') %>.</p>
+Much of what we are doing with sequences is setting up machinery that we'll make use of in the future.  This material is something like the ``review of functions'' material from Calculus One: we're just introducing terminology that we'll make use of later.  But already there are reasons to care: we can, for instance, use sequences to approximate \(\sqrt{2}\).
 
-% <p>Although this is a useful application, for me, the most interesting application of mathematics is to the human spirit.  It's just fun to think about!  One example is the <%= linkto_video('logistic-map','logistic map') %> which exhibits remarkable behavior in spite of its apparent simplicity.</p>
+\youtube{https://www.youtube.com/watch?v=nV01XC-seVM}
 
-% <h4>What other properties might a sequence have?</h4>
+Although this is a useful application, for me, the most interesting application of mathematics is to the human spirit.  It's just fun to think about!
 
-% <p>A sequence may be <%= linkto_video('sequence-bounded','bounded') %>, meaning all its terms are above a &ldquo;lower bound&rdquo; and below an
-% &ldquo;upper bound.&rdquo;  Read more about this in <%= linkto_textbook('subsection:boundedness') %>.  A sequence may be <%= linkto_video('sequence-monotone','increasing (or decreasing)') %>, meaning its terms are getting larger (or smaller) as we go out farther in the sequence.  This is discussed in  <%= linkto_textbook('subsection:monotonicity') %>.  Another word, &ldquo;monotone,&rdquo; is used to speak about sequences which are heading in the same direction, so increasing sequences and decreasing sequences are both examples of monotone sequences.</p>
+\subsection{What other properties might a sequence have?}
 
-% <p>This might not sound too important, but <%= linkto_video('monotone-convergence','monotonicity and boundedness together imply converegence')%>!  This remarkable result is <%= linkto_textbook('thm:bounded-monotonic') %>.  It can be  <%= linkto_video('monotone-convergence-example','helpful' )%> because the theorem guarantees a limit exists, even when it might be hard to actually compute it.</p>
+A sequence may be \textbf{bounded}, meaning all its terms are above a ``lower bound'' and below an
+``upper bound.''  A sequence may be increasing (or decreasing), meaning its terms are getting larger (or smaller) as we go out farther in the sequence.  
+Another word, ``monotone,'' is used to speak about sequences which are heading in the same direction, so increasing sequences and decreasing sequences are both examples of monotone sequences.
 
-% <h4>How big can sequences be?</h4>
+This might not sound too important, but monotonicity and boundedness together imply converegence!  This remarkable theorem is  helpful because the theorem guarantees a limit exists, even when it might be hard to actually compute it.
 
-% <p>Although it is not, strictly speaking, one of the learning objectives of the course, it is interesting to think about how &ldquo;big&rdquo; a sequence can be.  For example, can you think of a <%= linkto_video('sequence-of-integers','sequence which lists every integer') %>?  Can you think of a <%= linkto_video('cantor-diagonalization','sequence which lists every real number') %>?  That a collection of things can be listed off in a sequence is a more restrictive condition than it might initially appear.</p>
+\subsection{How big can sequences be?}
 
-% <h4>By the end of the week&hellip;</h4>
+Although it is not, strictly speaking, one of the learning objectives of the course, it is interesting to think about how ``big'' a sequence can be.  For example, can you think of a sequence which lists every integer?
 
-% <p>Each week, I'll have some learning objectives for you, which you can practice by doing the homework.  I hope you will be able to</p>
-% <ul>
-% <li>compute terms of a sequence presented as a <%= linkto_video('recursive-sequence','recursive formula') %>,</li>
-% <li>define and compute <%= linkto_video('sequence-limit','limits of sequences') %> in some cases,</li>
-% <li>find a <%= linkto_video('n-for-epsilon','sufficiently large index') %> to guarantee a sequence is within \(\epsilon\) of \(L\),</li>
-% <li>define what it means for a sequence to be <%= linkto_video('sequence-bounded','bounded') %> and determine when a sequence is bounded,</li>
-% <li>identify an <%= linkto_video('arithmetic-progression','arithmetic progression') %>,</li>
-% <li>identify a <%= linkto_video('geometric-progression','geometric progression') %>,</li>
-% <li>identify a <%= linkto_video('sequence-monotone','monotonic sequence') %>, and</li>
-% <li>apply the <%= linkto_video('monotone-convergence','monotone convergence theorem') %>.</li>
-% </ul>
-% <p>The homework is an example of &ldquo;formative assessment.&rdquo;  As such, this homework is not so much about you showing me how much you have learned; the final exam will handle that.  Rather, this homework is part of the process of learning.  Use the hints when you get stuck.  Discuss freely on the forums.  Take the quiz again and again.  Feel free to use the provided resources in whatever way helps you to understand the material.  I want you to succeed, and, with practice, I know you will.</p>
+\youtube{https://www.youtube.com/watch?v=AyAHoCi9U68}
 
-% <p>I am honored to be able to share some mathematics with you.  If there are specific things you would like to see, please let me know.  The success of this course depends on open communication.</p>
+Can you think of a sequence which lists every real number?  That a collection of things can be listed off in a sequence is a more restrictive condition than it might initially appear.
 
-% <%= week_pager(1) %>
-
-
-
-What questions do you have about this topic?  What would you like to see addressed further?
-\begin{free-response}
-\end{free-response}
+\youtube{https://www.youtube.com/watch?v=GWGDkKfv7bs}
 
 \end{document}
