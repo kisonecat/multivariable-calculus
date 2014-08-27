@@ -8,11 +8,12 @@
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\nth}{\mbox{\scriptsize th}}
 \renewcommand{\index}[1]{}
+\renewcommand{\label}[1]{}
 
 \begin{document}
-Bounded monotone sequences converge.
+
 \begin{abstract}
-  
+  Bounded monotone sequences converge.  
 \end{abstract}
 
 \maketitle
@@ -77,12 +78,14 @@ sequence into a divergent one.
 Show that the sequence $(a_n)$ given by $a_n = n^{1/n}$ converges.
 \end{example}
 
-\marginnote{You may be worried about my saying that $\log 3 > 1$.  If
+\begin{warning}
+You may be worried about my saying that $\log 3 > 1$.  If
   $\log$ were the common (base~10) logarithm, this would be wrong, but
   as far as I'm concerned, there is only one log, the natural log.
-  Since $3 > e$, we may conclude that $\log 3 > 1$.}
+  Since $3 > e$, we may conclude that $\log 3 > 1$.
+\end{warning}
 
-\begin{solution}
+\begin{worked-solution}
   We might first show that this sequence is decreasing, that is, we show
   that for all $n$,
   $$
@@ -112,7 +115,7 @@ Show that the sequence $(a_n)$ given by $a_n = n^{1/n}$ converges.
 
   Since all terms of the sequence are positive, the sequence is
   decreasing and bounded when $n \ge 3$, and so the sequence converges.
-\end{solution}
+\end{worked-solution}
 
 \marginnote{As it happens, you could compute the limit in
   Example~\xrefn{example:nth-root-of-n}, but our given solution shows that
@@ -153,6 +156,8 @@ canceling nicely.  In particular,
 These sorts of arguments involving the ratio of subsequent terms will
 come up again in a big way when we consider the ratio test.  Stay
 tuned!
+
+\subsection{Sample problem}
 
 \begin{question}
   Consider the sequence \(a_{n}\).  Suppose you know that for all \(n > 1\), \[ -6 \leq a_{n} \leq 0 \] and \(a_{1} = 2\), and \(a_{2} = -1\), and that the sequence is nonincreasing.  Does the sequence converge?
