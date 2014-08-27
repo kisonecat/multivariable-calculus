@@ -3,7 +3,6 @@
 \title{Limits}
 
 \newcommand{\defnword}[1]{\textbf{#1}}
-\newcommand{\ds}{\displaystyle}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\nth}{\mbox{th}}
@@ -56,15 +55,15 @@ that we specify, perhaps implicitly, that the variable is an integer.
 \begin{definition} \relax\index{limit of a sequence}
 \label{definition:limit-of-a-sequence}
 Suppose that $\left(a_n\right)$ is a sequence.
-To say that $\ds \lim_{n\to \infty}a_n=L$ is to say that \\
+To say that $\displaystyle\lim_{n\to \infty}a_n=L$ is to say that \\
 \null\quad for every $\epsilon>0$, \\
 \null\quad\quad there is an $N > 0$, \\
 \null\quad so that whenever $n>N$, \\
 \null\quad\quad we have $|a_n-L|<\epsilon$. \\
-If $\ds \lim_{n\to\infty}a_n=L$ we say that the sequence
+If $\displaystyle\lim_{n\to\infty}a_n=L$ we say that the sequence
 \defnword{converges}\index{convergent
   sequence}\index{sequence!convergent}.  If there is no finite value $L$ so
-that $\ds \lim_{n\to\infty}a_n = L$, then we say that the limit
+that $\displaystyle\lim_{n\to\infty}a_n = L$, then we say that the limit
 \defnword{does not exist}, or equivalently that the sequence
 \defnword{diverges}\index{divergent sequence}\index{sequence!divergent}.
 \end{definition} 
@@ -145,14 +144,14 @@ a function.
 \begin{theorem}
   \label{theorem:compute-limit-of-sequence-via-function}
   Let $f(x)$ be a real-valued function.  If $a_n = f(n)$ defines a
-  sequence $(a_n)$ and if $\ds \lim_{x\to\infty}f(x)=L$ in the sense of Calculus
-  One, then $\ds \lim_{n\to\infty} a_n=L$ as well.
+  sequence $(a_n)$ and if $\displaystyle\lim_{x\to\infty}f(x)=L$ in the sense of Calculus
+  One, then $\displaystyle\lim_{n\to\infty} a_n=L$ as well.
 \end{theorem}
 
 \begin{example}
 \label{example:find-n-for-epsilon}
-Since $\ds \lim_{x\to\infty}(1/x)=0$, it is
-clear that also $\ds \lim_{n\to\infty}(1/n)=0$; in other words, the sequence of numbers
+Since $\displaystyle\lim_{x\to\infty}(1/x)=0$, it is
+clear that also $\displaystyle\lim_{n\to\infty}(1/n)=0$; in other words, the sequence of numbers
 $${1\over1},\quad {1\over2},\quad {1\over3},\quad {1\over4},\quad {1\over5},\quad {1\over6},\quad \ldots$$
 get closer and closer to 0, or more precisely, as close as you want to get to zero, after a while, all the terms in the sequence are that close.
 
@@ -219,17 +218,17 @@ which is just the sequence $0, 0, 0, 0, \ldots$ since $\sin(n\pi)=0$
 whenever $n$ is an integer.  Since the sequence is just the constant sequence, we have
 $$
 \lim_{n\to\infty} f(n)= \lim_{n\to\infty} 0 = 0. 
-$$But $\ds \lim_{x\to\infty}f(x)$, when $x$ is real, does not exist: as $x$ gets
+$$But $\displaystyle\lim_{x\to\infty}f(x)$, when $x$ is real, does not exist: as $x$ gets
 bigger and bigger, the values $\sin(x\pi)$ do not get closer and
 closer to a single value, but instead oscillate between $-1$ and $1$.
 \end{example} 
 
-Here's some general advice. If you want to know $\ds \lim_{n\to\infty}
+Here's some general advice. If you want to know $\displaystyle\lim_{n\to\infty}
 a_n$, you might first think of a function $f(x)$ where $a_n = f(n)$,
-and then attempt to compute $\ds \lim_{x\to\infty}f(x)$.  If the limit
+and then attempt to compute $\displaystyle\lim_{x\to\infty}f(x)$.  If the limit
 of the function exists, then it is equal to the limit of the sequence.
-But, if for some reason $\ds \lim_{x\to\infty}f(x)$ does not exist, it
-may nevertheless still be the case that $\ds \lim_{n\to\infty}f(n)$
+But, if for some reason $\displaystyle\lim_{x\to\infty}f(x)$ does not exist, it
+may nevertheless still be the case that $\displaystyle\lim_{n\to\infty}f(n)$
 exists---you'll just have to figure out another way to compute it.
 
 \end{document}
