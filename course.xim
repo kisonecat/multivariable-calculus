@@ -9,6 +9,7 @@ sequences/sequences
   sequences/examples
     sequences/examples/arithmetic
     sequences/examples/geometric
+    sequences/examples/fibonacci
     sequences/examples/triangular
     sequences/examples/collatz
 
