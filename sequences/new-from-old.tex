@@ -1,0 +1,109 @@
+\documentclass{ximera}
+
+\title{New sequences from old}
+
+\newcommand{\defnword}[1]{\textbf{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\nth}{\mbox{\scriptsize th}}
+\renewcommand{\index}[1]{}
+
+\begin{document}
+
+\begin{abstract}
+  By throwing away some terms, we produce subsequences.
+\end{abstract}
+
+\maketitle
+
+\label{section:new-sequences-from-old}
+
+Given a sequence, one way to build a new sequence is to start with the
+old sequence, but then throw away a whole bunch of terms.  For
+instance, if we started with the sequence of perfect squares
+$$
+1,\quad 4,\quad 9,\quad 16,\quad 25,\quad 36,\quad 49,\quad 64,\quad 81,\quad\ldots
+$$
+we could throw away all the odd-indexed terms, and be left with
+$$
+4,\quad 16,\quad 36,\quad 64,\quad 100,\quad 144,\quad 196,\quad 256,\quad 324,\quad 400,\quad 484,\quad\ldots
+$$
+We say that this latter sequence is a
+\defnword{subsequence}\index{sequence!subsequence}\index{subsequence}
+of the original sequence.  Here is a precise definition.
+
+\begin{definition}
+  Suppose $(a_n)$ is a sequence with initial index $N$, and suppose we have a sequence of integers $(n_i)$ so that
+  $$
+  N \leq n_1 < n_2 < n_3 < n_4 < n_5 < \cdots 
+  $$
+  Then the sequence $(b_i)$ given by $b_i = a_{n_i}$ is said to be a \defnword{subsequence}\index{sequence!subsequence}\index{subsequence}
+  of the sequence $a_n$.
+\end{definition}
+
+\youtube{http://www.youtube.com/watch?v=OYRRFRzf12o}
+
+Limits are telling the story of ``what happens'' to a sequence.  If
+the terms of a sequence can be made as close as desired to a limiting
+value $L$, then the subsequence must share that same fate.
+
+\begin{theorem}
+  \label{theorem:subsequence-same-limit}
+  If $(b_i)$ is a subsequence of the convergent sequence $(a_n)$, then
+  $\ds\lim_{i \to \infty} b_i = \ds\lim_{n \to \infty} a_n$.
+\end{theorem}
+
+Of course, just because a subsequence converges does not mean that the
+larger sequence converges, too.  We'll see this again in more detail,
+but we'll discuss it briefly now.
+
+\begin{example}
+Find a convergent subsequence of the sequence $(a_n)$ given by the rule $a_n = (-1)^n$.
+\end{example}
+
+\begin{solution}
+Note that the sequence $(a_n)$ does not converge.  But by considering the sequence of indexes $n_i = 2 \cdot i$, we can build a subsequence
+$$
+b_i = a_{n_i} = a_{2i} = (-1)^{2i} = 1,
+$$
+which is a constant sequence, so it converges to 1.
+\end{solution}
+
+There are other subsequences of $a_n = (-1)^n$ which converge but do
+\textit{not} converge to one.  For instance, the subsequence of odd
+indexed terms is the constant sequence $c_n = -1$, which converges to
+$-1$.  For that matter, the fact that there are convergent
+subsequences with distinct limits perhaps explains why the original
+sequence $(a_n)$ does not converge.  Let's formalize this.
+
+\begin{corollary}
+  \label{corollary:different-subsequences-then-diverge}
+
+  Suppose $(b_i)$ and $(c_i)$ are convergent subsequences of the sequence $(a_n)$, but
+  $$
+  \ds\lim_{i \to \infty} b_i \neq \ds\lim_{i \to \infty} c_i.
+  $$
+  Then the sequence $(a_n)$ does not converge.
+\end{corollary}
+
+\begin{proof}
+  Suppose, on the contrary, the sequence $(a_n)$ did converge.  Then
+  by Theorem~\xrefn{theorem:subsequence-same-limit}, the subsequence
+  $(b_i)$ would converge, too, and
+  $$
+  \ds\lim_{i \to \infty} b_i = \ds\lim_{n \to \infty} a_n.
+  $$
+  Again by Theorem~\xrefn{theorem:subsequence-same-limit}, the subsequence
+  $(c_i)$ would converge, too, and
+  $$
+  \ds\lim_{i \to \infty} c_i = \ds\lim_{n \to \infty} a_n.
+  $$
+  But then $\ds\lim_{i \to \infty} b_i = \ds\lim_{i \to \infty} c_i$,
+  which is exactly what we are supposing doesn't happen!  To avoid
+  this contradiction, it must be that our original assumption that
+  $(a_n)$ converged was incorrect; in short, the sequence $(a_n)$ does
+  not converge.
+\end{proof}
+
+\end{document}

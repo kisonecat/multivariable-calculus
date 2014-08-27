@@ -1,0 +1,114 @@
+\documentclass{ximera}
+
+\title{Monotonicity}
+
+\newcommand{\defnword}[1]{\textbf{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\nth}{\mbox{\scriptsize th}}
+\renewcommand{\index}[1]{}
+
+\begin{document}
+
+\begin{abstract}
+  A monotone sequence keeps heading in the same direction.
+\end{abstract}
+
+\maketitle
+
+\label{subsection:monotonicity}
+
+And sometimes we don't even care about limits, but we'd simply like
+some terminology with which to describe features we might notice about
+sequences.  Here is some of that terminology.
+
+\marginnote{For instance, how much money I have on day $n$ is a
+  sequence; I probably hope that sequence is an increasing sequence.}
+
+\begin{definition}
+  A sequence is called
+  \defnword{increasing}\index{sequence!increasing} (or sometimes
+  \defnword{strictly increasing}) if $\ds a_n<a_{n+1}$ for all $n$.
+  It is called {\dfont
+    non-decreasing\index{sequence!non-decreasing}\/} if $\ds a_n\le
+  a_{n+1}$ for all $n$.
+
+  Similarly a sequence is {\dfont
+    decreasing\index{sequence!decreasing}\/} (or, by some people,
+  \defnword{strictly decreasing}) if $\ds a_n>a_{n+1}$ for all $n$ and
+  {\dfont non-increasing\index{sequence!non-increasing}\/} if $\ds
+  a_n\ge a_{n+1}$ for all $n$.
+\end{definition}
+To make matters worse, the people who insist on saying ``strictly
+increasing'' may---much to everybody's confusion---insist on calling a
+non-decreasing sequence ``increasing.'' I'm not going to play their
+game; I'll be careful to say ``non-decreasing'' when I mean a sequence
+which is getting larger or staying the same.
+
+To make matters better, lots of facts are true for sequences which are
+either increasing or decreasing; to talk about this situation without
+constantly saying ``either increasing or decreasing,'' we can make up
+a single word to cover both cases.
+\begin{definition}
+  If a sequence is increasing, non-decreasing, decreasing, or
+  non-increasing, it is said to be {\dfont
+    monotonic\index{sequence!monotonic}\/}.
+\end{definition}
+
+\youtube{https://www.youtube.com/watch?v=FMaKP0hmytU}
+
+Let's see some examples of sequences which are monotonic.
+\begin{example}
+The sequence $\ds a_n = {2^n-1\over2^n}$ which starts
+$$
+  {1\over2},\quad {3\over4},\quad {7\over8},\quad {15\over16},\quad \ldots,
+$$
+is increasing.  On the other hand, the sequence $\ds b_n = {n+1\over n}$, which starts
+$$ 
+  {2\over1},\quad{3\over2},\quad{4\over3},\quad{5\over4},\quad\ldots,
+$$
+is decreasing.
+\end{example}
+
+\begin{question}
+  Which of the following could be the initial terms of a monotonic sequence?
+
+  \begin{solution}
+    \begin{hint}
+      A monotonic sequence is a sequence which is either increasing, decreasing, non-increasing, or non-decreasing.
+    \end{hint}
+    \begin{hint}
+      Looking at available choices, mostly these sequences are increasing.
+    \end{hint}
+    \begin{hint}
+      For example, \(12 < 13\).
+    \end{hint}
+    \begin{hint}
+      Can \(5,  11,  16,  12,  18,  22 \) be the beginning of a monotonic sequence?  No, because mostly these terms are increasing, but \(16\) and \(12\) break the pattern.
+    \end{hint}
+    \begin{hint}
+      Can \(5,  11,  16,  22,  16,  22 \) be the beginning of a monotonic sequence?  No, because mostly these terms are increasing, but \(22\) and \(16\) break the pattern.
+    \end{hint}
+    \begin{hint}
+      Can \(5,  6,  10,  12,  15,  10 \) be the beginning of a monotonic sequence?  No, because mostly these terms are increasing, but \(15\) and \(10\) break the pattern.
+    \end{hint}
+    \begin{hint}
+      Can \(5,  11,  12,  13,  15,  16 \) possibly be the beginning of a monotonic sequence?  Yes, because this portion of the sequence is increasing, so it is possible that the rest of sequence continues that pattern.
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{\(5,\quad 11,\quad 12,\quad 13,\quad 15,\quad 16,\quad\ldots \)}
+      \choice{\(5,\quad 3,\quad 6,\quad 8,\quad 12,\quad 15,\quad\ldots \)}
+      \choice{\(5,\quad 10,\quad 4,\quad 10,\quad 15,\quad 19,\quad\ldots \)}
+      \choice{\(5,\quad 11,\quad 16,\quad 12,\quad 18,\quad 22,\quad\ldots \)}
+      \choice{\(5,\quad 11,\quad 16,\quad 22,\quad 16,\quad 22,\quad\ldots \)}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+            
+
+\end{document}

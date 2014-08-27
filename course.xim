@@ -12,6 +12,12 @@ sequences/sequences
     sequences/examples/fibonacci
     sequences/examples/triangular
     sequences/examples/collatz
+  sequences/limits
+  sequences/new-from-old
+  sequences/features
+    sequences/features/monotonicity
+    sequences/features/boundedness
+
 
 
 
