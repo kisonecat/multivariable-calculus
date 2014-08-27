@@ -17,8 +17,6 @@
 
 \maketitle
 
-\label{subsection:boundedness}
-
 Sometimes we can't say exactly which number a sequence approaches, but
 we can at least say that the sequence doesn't get too big or too
 small.
@@ -74,16 +72,14 @@ to be {\dfont bounded\index{sequence!bounded}\/}.
       \choice{There exists an \(M \in \mathbb{R}\), so that for all \(n \in \mathbb{N}\), we have \(a_n \leq M\).}
     \end{multiple-choice}
 
-              \end{solution}
-            \end{question}
+  \end{solution}
+\end{question}
             
-
 If a sequence $\ds
 \{a_n\}_{n=0}^\infty$ is increasing or non-decreasing it is bounded
 below (by $\ds a_0$), and if it is decreasing or non-increasing it is
 bounded above (by $\ds a_0$).
 
-% Relevant video: sequence-bounded
 \begin{question}
   Consider the sequence \(b_{n} = -n^{2} + 5 \, n - 5\).  Is the sequence bounded above?  Bounded below?
   \begin{solution}
@@ -106,7 +102,6 @@ bounded above (by $\ds a_0$).
       Altogether then, the sequence is bounded above, but not below.
     \end{hint}
 
-
     \begin{multiple-choice}
       \choice[correct]{Bounded above, but not bounded below.}
       \choice{Bounded below, but not bounded above.}
@@ -117,182 +112,5 @@ bounded above (by $\ds a_0$).
   \end{solution}
 \end{question}
             
-
-
-
-
-
-Finally, with all this new terminology we can state the most important
-theorem of Chapter~\xrefn{chapter:sequences}.
-
-\begin{theorem} If the sequence $a_n$ is bounded and monotonic, then
-  $\lim_{n \to \infty} a_n$ exists.  \label{thm:bounded-monotonic}
-\end{theorem}
-In short, bounded monotonic sequences converge---though we can't
-necessarily describe the number to which they converge.
-
-We will not prove this theorem in the textbook.\sidenote{Proving this
-  theorem is, honestly, the purview of a course in \textit{analysis},
-  the theoretical underpinnings of calculus.  That's not to say it
-  couldn't be done in this course, but I intend this to be a ``first
-  glance'' at sequences---so much will be left unsaid.} Nevertheless,
-it is not hard to believe: suppose that a sequence is increasing and
-bounded, so each term is larger than the one before, yet never larger
-than some fixed value $M$. The terms must then get closer and closer
-to some value between $\ds a_0$ and $M$. It certainly need not be $M$,
-since $M$ may be a ``too generous'' upper bound; the limit will be the
-smallest number that is above\sidenote{This concept of the ``smallest
-  number above all the terms'' is an incredibly important one; it is
-  the idea of a
-  \href{http://en.wikipedia.org/wiki/Least-upper-bound_property}{least
-    upper bound} that underlies the real numbers.} all of the terms
-$\ds a_n$.  Let's try an example!
-
-\begin{example}
-  \label{example:sequence-bounded}
-  All of the terms $\ds (2^i-1)/2^i$ are less than 2, and the sequence
-  is increasing.  As we have seen, the limit of the sequence is 1---1
-  is the smallest number that is bigger than all the terms in the
-  sequence.  Similarly, all of the terms $(n+1)/n$ are bigger than
-  $1/2$, and the limit is 1---1 is the largest number that is smaller
-  than the terms of the sequence.
-\end{example}
-
-We don't actually need to know that a sequence is monotonic to apply
-this theorem---it is enough to know that the sequence is
-``eventually'' monotonic,\sidenote{After all, the limit only depends on
-  what is happening after some large index, so throwing away the
-  beginning of a sequence won't affect its convergence or its limit.}
-that is, that at some point it becomes increasing or decreasing.  For
-example, the sequence $10$, $9$, $8$, $15$, $3$, $21$, $4$, $3/4$,
-$7/8$, $15/16$, $31/32,\ldots$ is not increasing, because among the
-first few terms it is not. But starting with the term $3/4$ it is
-increasing, so if the pattern continues and the sequence is bounded,
-the theorem tells us that the ``tail'' $3/4, 7/8, 15/16, 31/32,\ldots$
-converges.  Since convergence depends only on what happens as $n$ gets
-large, adding a few terms at the beginning can't turn a convergent
-sequence into a divergent one.
-
-\begin{example}
-\label{example:nth-root-of-n}
-Show that the sequence $(a_n)$ given by $a_n = n^{1/n}$ converges.
-\end{example}
-
-\marginnote{You may be worried about my saying that $\log 3 > 1$.  If
-  $\log$ were the common (base~10) logarithm, this would be wrong, but
-  as far as I'm concerned, there is only one log, the natural log.
-  Since $3 > e$, we may conclude that $\log 3 > 1$.}
-
-\begin{solution}
-  We might first show that this sequence is decreasing, that is, we show
-  that for all $n$,
-  $$
-  n^{1/n} > (n+1)^{1/(n+1)}.
-  $$
-  But this isn't true!  Take a look
-  \begin{align*}
-    a_1 &= 1, \\
-    a_2 &= \sqrt{2} \approx 1.4142, \\
-    a_3 &= \sqrt[3]{3} \approx 1.4422, \\
-    a_4 &= \sqrt[4]{4} \approx 1.4142, \\
-    a_5 &= \sqrt[5]{5} \approx 1.3797, \\
-    a_6 &= \sqrt[6]{6} \approx 1.3480, \\
-    a_7 &= \sqrt[7]{7} \approx 1.3205, \\
-    a_8 &= \sqrt[8]{8} \approx 1.2968, \mbox{ and}\\
-    a_9 &= \sqrt[9]{9} \approx 1.2765. \\
-  \end{align*}
-  But it does seem that this sequence perhaps is decreasing after the
-  first few terms.  Can we justify this?
-
-  Yes!  Consider the real function $\ds f(x)=x^{1/x}$ when $x\ge1$.
-  We compute the derivative---perhaps via ``logarithmic differentiation''---to find
-  $$
-  f'(x)=\frac{x^{1/x} \, (1-\log x)}{x^2}.
-  $$
-  Note that when $x\ge 3$, the derivative $f'(x)$ is negative.  Since the function $f$ is decreasing, we can conclude that the sequence is decreasing---well, at least for $n \geq 3$.
-
-  Since all terms of the sequence are positive, the sequence is
-  decreasing and bounded when $n \ge 3$, and so the sequence converges.
-\end{solution}
-
-\marginnote{As it happens, you could compute the limit in
-  Example~\xrefn{example:nth-root-of-n}, but our given solution shows that
-  it converges even without knowing the limit!}
-
-\begin{example}
-Show that the sequence $a_n = \ds\frac{n!}{n^n}$ converges.
-\end{example}
-
-\begin{solution}
-  Let's get an idea of what is going on by computing the first few terms.
-% print(join(['a_' + str(k) + '=' + latex(f(x=k)) + ' ' + '\\approx ' + str(n(f(x=k),digits=5)) for k in range(1,9)],',\quad '))
-\begin{align*}
-a_1&= 1,\quad a_2= \frac{1}{2},\quad a_3= \frac{2}{9} \approx 0.22222,\quad a_4= \frac{3}{32} \approx 0.093750, \\
-a_5&= \frac{24}{625} \approx 0.038400, \quad a_6= \frac{5}{324} \approx 0.015432, \\
-a_7&= \frac{720}{117649} \approx 0.0061199,\quad a_8= \frac{315}{131072} \approx 0.0024033.
-\end{align*}
-  The sequence appears to be decreasing.  To formally show this, we would need to show $\ds a_{n+1}< a_n$, but we will instead show that
-$$
-\frac{a_{n+1}}{a_n} < 1,
-$$
-which amounts to the same thing.  It is helpful trick here to think of
-the ratio between subsequent terms, since the factorials end up
-canceling nicely.  In particular,
-\begin{align*}
-  {a_{n+1}\over a_n} &= {(n+1)!\over (n+1)^{n+1}}{n^n\over n!} \\
-  &= {(n+1)!\over n!}{n^n\over (n+1)^{n+1}} \\
-  &= {n+1\over n+1}\left({n\over n+1}\right)^n
-  &= \left({n\over n+1}\right)^n < 1.
-\end{align*}
-  Note that the sequence is bounded below, since every term is positive.
-
-  Because the sequence is decreasing and bounded below, it converges.
-  Indeed, Exercise~\xrefn{exercise:factorial-limit} asks you to
-  compute the limit.
-\end{solution}
-
-These sorts of arguments involving the ratio of subsequent terms will
-come up again in a big way in Section~\xrefn{section:ratio-test}.
-Stay tuned!
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{exercises}
-
-\begin{exercise} \label{exercise:exponential limit}
-Compute $\ds\lim_{x\to\infty} x^{1/x}$.
-\begin{answer} $1$
-\end{answer}\end{exercise}
-
-\begin{exercise} Use the squeeze theorem to show that 
-$\ds\lim_{n\to\infty} {n!\over n^n}=0$.
-\label{exercise:factorial-limit}
-\end{exercise}
-
-\begin{exercise} Determine whether $\ds\{\sqrt{n+47}-\sqrt{n}\}_{n=0}^\infty$ 
-converges or diverges. If it converges, compute the limit.
-\begin{answer} $0$
-\end{answer}\end{exercise}
-
-\begin{exercise} Determine whether 
-$\ds\left\{{n^2+1\over (n+1)^2}\right\}_{n=0}^\infty$ 
-converges or diverges. If it converges, compute the limit.
-\begin{answer} $1$
-\end{answer}\end{exercise}
-
-\begin{exercise} Determine whether 
-$\ds\left\{{n+47\over\sqrt{n^2+3n}}\right\}_{n=1}^\infty$ 
-converges or diverges. If it converges, compute the limit.
-\begin{answer} $1$
-\end{answer}\end{exercise}
-
-\begin{exercise} Determine whether 
-$\ds\left\{{2^n\over n!}\right\}_{n=0}^\infty$ 
-converges or diverges. If it converges, compute the limit.
-\begin{answer} $0$
-\end{answer}\end{exercise}
-
-\end{exercises}
-
-
 
 \end{document}

@@ -17,8 +17,6 @@ sequences/sequences
   sequences/features
     sequences/features/monotonicity
     sequences/features/boundedness
-
-
-
+    sequences/features/monotone-convergence
 
 
