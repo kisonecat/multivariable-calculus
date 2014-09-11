@@ -1,0 +1,152 @@
+\documentclass{ximera}
+
+\title{Calculus}
+
+\begin{document}
+
+\begin{abstract}
+  Like polynomials, it is possible to differentiate a power series term-by-term.
+\end{abstract}
+
+\maketitle
+
+When thinking about power series, lots of intuitive facts can be guessed by thinking about polynomials.  Just like polynomials, it is possible to differentiate a power series term-by-term.
+
+\youtube{https://www.youtube.com/watch?v=-IeyyON8FIw}
+
+\begin{question}
+  Consider the power series \[f(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right).\]  Which series below is a power series for \(f'(x)\)?
+
+  \begin{solution}
+    \begin{hint}
+      Let's suppose that \(R\) is the radius of convergence of \(\displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\).
+    \end{hint}
+    \begin{hint}
+      The theorem tells us that we can differentiate \(f(x)\) by differentiating \(\displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\) term-by-term.
+    \end{hint}
+    \begin{hint}
+      This means that \(f'(x)\) is equal to \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{d}{dx} \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\) at least for \(x \in (-R,R)\).
+    \end{hint}
+    \begin{hint}
+      Differentiating, we find \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{d}{dx} \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right) = 
+      \displaystyle\sum_{n=1}^\infty \left( \displaystyle\frac{5 \, n - 2}{4 \, n - 5} \displaystyle\frac{d}{dx} x^{n} \right)\).
+    \end{hint}
+    \begin{hint}
+      Note that \(n=0\) has been replaced by \(n=1\).  The derivative of the constant term is zero, so we need not include it.
+    \end{hint}
+    \begin{hint}
+      But \(\displaystyle\frac{d}{dx} x^{n} = n \cdot x^{n-1}\).
+    \end{hint}
+    \begin{hint}
+      That is only true if \(n \geq 1\); thank goodness we eliminated the \(n=0\) term a moment ago!
+    \end{hint}
+    \begin{hint}
+      Therefore \(f'(x) = \displaystyle\sum_{n=1}^\infty \left( \displaystyle\frac{5 \, n - 2}{4 \, n - 5} \right) \cdot n \cdot x^{n-1} \).
+    \end{hint}
+    \begin{hint}
+      Most of the possible answers, though, are written with \(x^{n}\) instead of \(x^{n-1}\).  How is that possible?
+    \end{hint}
+    \begin{hint}
+      The trick is to re-index the series; replace \(n\) with \(n+1\).
+    \end{hint}
+    \begin{hint}
+      To keep track of what is going on, set \(a_{n} = \displaystyle\frac{5 \, n - 2}{4 \, n - 5}\).
+    \end{hint}
+    \begin{hint}
+      Then \(f'(x) = \displaystyle\sum_{n=1}^\infty a_{n} \cdot n \cdot x^{n-1} =  \displaystyle\sum_{n=0}^\infty a_{n+1} \cdot \left(n+1\right) \cdot x^{n}\).
+    \end{hint}
+    \begin{hint}
+      In this case, \(a_{n+1} = \displaystyle\frac{5 \, n + 3}{4 \, n - 1}\).
+    \end{hint}
+    \begin{hint}
+      So \(f'(x) = \displaystyle\sum_{n=0}^\infty a_{n+1} \cdot \left(n+1\right) \cdot x^{n} = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{5 \, n + 3}{4 \, n - 1} \right) \cdot \left(n+1\right) \cdot x^{n}\).
+    \end{hint}
+    \begin{hint}
+      This can be written in a slightly different form.
+    \end{hint}
+    \begin{hint}
+      I conclude that \(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 8 \, n + 3\right)} x^{n}}{4 \, n - 1} \right) \).
+    \end{hint}
+
+    
+    \begin{multiple-choice}
+      \choice[correct]{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 8 \, n + 3\right)} x^{n}}{4 \, n - 1} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} - 2 \, n\right)} x^{n}}{4 \, n - 5} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 3 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 3 \, n\right)} x^{n}}{4 \, n - 1} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=1}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n - 1}}{4 \, n - 5} \right)\)}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+It is also possible to integrate a power series term-by-term.
+
+\youtube{https://www.youtube.com/watch?v=cyaQpCc_ZX4}
+
+Calculus interacts very nicely with power series.  Think about the function \(f(x) = \sum_{n=0}^\infty \frac{x^n}{n!}\).  It turns out that power series converges for all \(x\), and because we can differentiate term-by-term, we can show that \(f'(x) = f(x)\), meaning it is its own derivative.  This is the beginning of the argument that \(f(x)\) is actually \(e^x\), another function which is its own derivative.  It would have been hard to show that \(\sum_{n=0}^\infty \frac{1}{n!} = e\), but by fitting that isolated fact into the family of facts \(\sum_{n=0}^\infty \frac{x^n}{n!} = e^x\), it is much easier to understand what is going on.  You can keep playing this game, too: since \(e^x \cdot e^x = e^{2x}\), consider what happens if you try to expand \(\left(\sum_{n=0}^\infty \frac{x^n}{n!}\right) \cdot \left(\sum_{n=0}^\infty \frac{x^n}{n!}\right)\).  
+
+\youtube{https://www.youtube.com/watch?v=BsHngdTlQ7Q}
+
+\hrule
+
+\section{Can you multiply power series?}
+
+\youtube{https://www.youtube.com/watch?v=1Ln_FgckN78}
+
+\begin{question}
+  Suppose \(f(x) = \displaystyle\sum_{n=0}^\infty 2 \, {\left(2 \, n + 1\right)} x^{n}\) and \(g(x) = \displaystyle\sum_{n=0}^\infty {\left(n + 2\right)} x^{n}\).  Which of the following is the beginning of the power series representation for the product \(f(x) \, g(x)\)?
+  
+  \begin{solution}
+    \begin{hint}
+      Since \(f(x) = \displaystyle\sum_{n=0}^\infty 2 \, {\left(2 \, n + 1\right)} x^{n}\), we have that \(f(x) =  2+ 6 \, x + 10 \, x^{2} + 14 \, x^{3} +18 \, x^{4}  + \cdots\).
+    \end{hint}
+    \begin{hint}
+      Since \(g(x) = \displaystyle\sum_{n=0}^\infty 2 \, {\left(2 \, n + 1\right)} x^{n}\), we have that \(g(x) =  2+ 3 \, x + 4 \, x^{2} + 5 \, x^{3} +6 \, x^{4}  + \cdots\).
+    \end{hint}
+    \begin{hint}
+      Since the constant term of \(f(x)\) is \(2\), and the constant term of \(g(x)\) is \(2\), I can multiply to find that the constant term of \(f(x) \cdot g(x)\) is \(2 \cdot 2 = 4\).
+    \end{hint}
+    \begin{hint}
+      Let's now find the \(x\) term.
+    \end{hint}
+    \begin{hint}
+      I will use the notation \(O(x^2)\) to denote terms that involve at least \(x^2\).
+    \end{hint}
+    \begin{hint}
+      Since \(f(x) = 2 + 6 \, x + O(x^2)\) and \(g(x) = 2 + 3 \, x + O(x^2)\), I can multiply the two polynomials \( 2 + 6 \, x\) and \(2 + 3 \, x\) to find an expression for the first two terms of \(f(x) \cdot g(x)\).
+    \end{hint}
+    \begin{hint}
+      In this case, the term involving just \(x\) in the product \(f(x) \cdot g(x)\) is \( 2 \cdot 3 \, x + 6 \, x \cdot 2 \).
+    \end{hint}
+    \begin{hint}
+      Altogether \( \left( 2 + 6 \, x + O(x^2) \right) \cdot \left( 2 + 3 \, x + O(x^2) \right)\) is \( 4+18 x  + O(x^2)\).
+    \end{hint}
+    \begin{hint}
+      To compute the coefficient on the \(x^2\) term in the product \(f(x) \cdot g(x)\), we could begin by noting that \(f(x) = 2 + 6 \, x + 10 \, x^{2} + O(x^3)\) and \(g(x) = 2 + 3 \, x + 4 \, x^{2} + O(x^3)\).
+    \end{hint}
+    \begin{hint}
+      Then we can multiply to get that the coefficient on \(x^2\) is \( 2 \cdot 4 \, x^{2} + 6 \, x \cdot 3 \, x + 10 \, x^{2} \cdot 2 \), which is \(46 x^2\).
+    \end{hint}
+    \begin{hint}
+      So far, we may conclude that \(f(x) \cdot g(x) =  4+ 18 x +46 x^{2}  + \cdots\).
+    \end{hint}
+    \begin{hint}
+      But that is actually enough information to select the correct answer from the given possibilities, namely that \(f(x) \cdot g(x) =  4+ 18 x + 46 x^{2} +92 x^{3}  + \cdots\)
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{\( 4+ 18 x + 46 x^{2} +92 x^{3} + \cdots \)}
+      \choice{\( 4+ 18 x + 45 x^{2} +87 x^{3} + \cdots \)}
+      \choice{\( 4+ 18 x + 44 x^{2} +84 x^{3} + \cdots \)}
+      \choice{\( 4+ 18 x + 43 x^{2} +94 x^{3} + \cdots \)}
+      \choice{\( 4+ 18 x + 50 x^{2} +87 x^{3} + \cdots \)}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+
+
+\end{document}

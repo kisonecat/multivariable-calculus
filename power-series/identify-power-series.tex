@@ -1,0 +1,74 @@
+\documentclass{ximera}
+
+\title{What are power series?}
+
+\begin{document}
+
+\begin{abstract}
+  A power series is, very roughly speaking, a polynomial that goes on and on.
+\end{abstract}
+
+\maketitle
+
+Up until now, we had been considering series one at a time; with power
+series, we are considering a whole family of series,
+namely \[\sum_{n=0}^\infty a_n x^n\] which depend on a parameter
+\(x\).  They are like polynomials, so they are easy to work with.  And
+yet, lots of functions we care about---like \(e^x\)---can be
+represented as power series, so power series bring the relaxed
+atmosphere of polynomials to the harder realm of functions like
+\(e^x\).
+
+\begin{question}
+  Which of the following is a power series?
+
+  \begin{solution}
+    \begin{hint}
+      Remember the form of a power series is \(\displaystyle\sum_{n=0}^\infty a_n x^n\).
+    \end{hint}
+    \begin{hint}
+      So if we separate out the \(x^n\) but find that the remaining \(a_n\) has an \(x\) in it, we are in trouble!
+    \end{hint}
+    \begin{hint}
+      Is \(\displaystyle\sum_{n=0}^\infty \sin\left(x^{n}\right)\) a power series?
+    \end{hint}
+    \begin{hint}
+      No.  There is no \(x^n\) term.  The only \(x^n\) is inside \(\sin\).
+    \end{hint}
+    \begin{hint}
+      Is \(\displaystyle\sum_{n=0}^\infty x^{-n}\) a power series?
+    \end{hint}
+    \begin{hint}
+      No.  The power of \(x\) is negative.
+    \end{hint}
+    \begin{hint}
+      Is \(\displaystyle\sum_{n=0}^\infty \tan\left(x^{n}\right)\) a power series?
+    \end{hint}
+    \begin{hint}
+      No.  There is no \(x^n\) term.  The only \(x^n\) is inside \(\tan\).
+    \end{hint}
+    \begin{hint}
+      How about \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{2}{63} \, x^{n} {\left(14 \, \sin\left(x\right) + 27\right)}\).  Is it a power series?
+    \end{hint}
+    \begin{hint}
+      Again, no.  The coefficient involves sine of \(x\).
+    \end{hint}
+    \begin{hint}
+      What about \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{1}{30} \, {\left(12 \, n + 25\right)} x^{n}\)?
+    \end{hint}
+    \begin{hint}
+      Yes, that has the correct form.  In this case \(a_n = \displaystyle\frac{2}{5} \, n + \displaystyle\frac{5}{6}\).
+    \end{hint}
+
+    \begin{multiple-choice}
+      \choice[correct]{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{1}{30} \, {\left(12 \, n + 25\right)} x^{n} \)}
+      \choice{\(\displaystyle\sum_{n=0}^\infty \sin\left(x^{n}\right) \)}
+      \choice{\(\displaystyle\sum_{n=0}^\infty x^{-n} \)}
+      \choice{\(\displaystyle\sum_{n=0}^\infty \tan\left(x^{n}\right) \)}
+      \choice{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{2}{63} \, x^{n} {\left(14 \, \sin\left(x\right) + 27\right)} \)}
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+
+\end{document}

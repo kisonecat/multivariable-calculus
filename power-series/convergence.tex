@@ -1,0 +1,105 @@
+\documentclass{ximera}
+
+\title{Where do they converge?}
+
+\begin{document}
+
+\begin{abstract}
+  For power series, the question is not so much whether they converge, but rather where they converge.
+\end{abstract}
+
+\maketitle
+
+We have long been interested in the question of whether a single series converges.  A power series puts a different spin on the question ``does it converge?''  Since a power series has the form \(\sum_{n=0}^\infty a_n x^n\), we should ask not just whether it converges, but \textit{where} it converges, meaning for which values of \(x\) does the power series converge?  The collection of all the real numbers \(x\) for which the given power series converges is called the
+\textbf{interval of convergence} for that power series.
+
+\youtube{https://www.youtube.com/watch?v=DWtrO2Z0Pww}
+
+Power series have remarkably nice convergence properties.  For
+example, when power series converge, they usually converge absolutely.
+
+\youtube{https://www.youtube.com/watch?v=rzmaIqLka5k}
+
+Bad things can happen at the endpoints, meaning that although absolute convergence is possible at the endpoints, it is also possible that the power series might diverge or conditionally converge at an endpoint.
+
+\youtube{https://www.youtube.com/watch?v=jtvSTHPKE3c}
+
+% Relevant video: interval-of-convergence
+\begin{question}
+  For which real numbers \(x\) does the series \[\displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n} x^{n}}{7 \, n} \right)\] converge?  Choose the largest such interval.
+  
+  \begin{solution}
+    \begin{hint}
+      Let \(a_{n} = \displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n}}{7 \, n}\), so the given series is \(\displaystyle\sum_{n=2}^\infty a_{n} x^{n}\).
+    \end{hint}
+    \begin{hint}
+      For the ratio test, consider \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|}\).
+    \end{hint}
+    \begin{hint}
+      We want this limit to be less than one to get absolute convergence.
+    \end{hint}
+    \begin{hint}
+      In this case, \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| \displaystyle\frac{\displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n + 1}}{7 \, {\left(n + 1\right)}}}{\displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n}}{7 \, n}} \right| \cdot \left| x \right|\).
+    \end{hint}
+    \begin{hint}
+      Simplifying, \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| -\displaystyle\frac{8 \, n}{9 \, {\left(n + 1\right)}} \right| \cdot \left| x \right|\).
+    \end{hint}
+    \begin{hint}
+      So the limit is less than one exactly when \(|x| < \displaystyle\frac{9}{8}\).
+    \end{hint}
+    \begin{hint}
+      So the series converges absolutely when \(x\) is in the interval \(\left(-\displaystyle\frac{9}{8},\displaystyle\frac{9}{8}\right)\).
+    \end{hint}
+    \begin{hint}
+      The series may converge conditionally, however, at the endpoints of its interval of convergence.
+    \end{hint}
+    \begin{hint}
+      In this case, that means the series may yet converge or diverge when \(x = -\displaystyle\frac{9}{8}\) or when \(x = \displaystyle\frac{9}{8}\).
+    \end{hint}
+    \begin{hint}
+      Let's check \(x = -\displaystyle\frac{9}{8}\).
+    \end{hint}
+    \begin{hint}
+      Then \(\displaystyle\sum_{n=2}^\infty a_{n} x^{n} = \displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n}}{7 \, n} \right) \left( -\displaystyle\frac{9}{8} 
+      \right)^{n}\).
+    \end{hint}
+    \begin{hint}
+      But then \(\displaystyle\sum_{n=2}^\infty a_{n} x^{n} = \displaystyle\sum_{n=2}^\infty \displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n} \left(-\displaystyle\frac{9}{8}\right)^{n}}{7 \, n} = \displaystyle\frac{6}{7} \displaystyle\sum_{n=2}^\infty \displaystyle\frac{\left(-8\right)^{n} \left(-9\right)^{n}}{9^{n} 8^{n} n}\).
+    \end{hint}
+    \begin{hint}
+      That diverges, so \(x = -\displaystyle\frac{9}{8}\) is not a point where the series converges.
+    \end{hint}
+    \begin{hint}
+      Let's check \(x = \displaystyle\frac{9}{8}\).
+    \end{hint}
+    \begin{hint}
+      Then \(\displaystyle\sum_{n=2}^\infty a_{n} x^{n} = \displaystyle\sum_{n=2}^\infty \left( \displaystyle\frac{6 \, \left(-\displaystyle\frac{8}{9}\right)^{n}}{7 \, n} \right) \left( \displaystyle\frac{9}{8} 
+      \right)^{n}\).
+    \end{hint}
+    \begin{hint}
+      But then \(\displaystyle\sum_{n=2}^\infty a_{n} x^{n} = \displaystyle\sum_{n=2}^\infty \displaystyle\frac{6 \, \left(\displaystyle\frac{9}{8}\right)^{n} \left(-\displaystyle\frac{8}{9}\right)^{n}}{7 \, n} = \displaystyle\frac{6}{7} \displaystyle\sum_{n=2}^\infty \displaystyle\frac{\left(-8\right)^{n}}{8^{n} n}\).
+    \end{hint}
+    \begin{hint}
+      That is an alternating harmoni series, so it converges conditionally.
+    \end{hint}
+    \begin{hint}
+      And so \(x = \displaystyle\frac{9}{8}\) is a point where the series converges.
+    \end{hint}
+    \begin{hint}
+      Let's summarize: the series converges exactly when \(x\) is in the interval \(\left( -\displaystyle\frac{9}{8} , \displaystyle\frac{9}{8} \right] \).
+    \end{hint}
+
+    \begin{multiple-choice}
+      \choice[correct]{Exactly when \(x\) is in the interval \(\left( -\displaystyle\frac{9}{8} , \displaystyle\frac{9}{8} \right] \)}
+      \choice{Exactly when \(x\) is in the interval \(\left[ -\displaystyle\frac{9}{8} , \displaystyle\frac{9}{8} \right) \)}
+      \choice{Exactly when \(x\) is in the interval \(\left( -\displaystyle\frac{9}{8} , \displaystyle\frac{9}{8} \right) \)}
+      \choice{Exactly when \(x\) is in the interval \(\left[ -\displaystyle\frac{9}{8} , \displaystyle\frac{9}{8} \right] \)}
+      
+    \end{multiple-choice}
+    
+  \end{solution}
+\end{question}
+            
+
+
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass{ximera}
+
+\title{Geometric series}
+
+\begin{document}
+
+\begin{abstract}
+  Geometric series are a useful example to consider when thinking about power series.
+\end{abstract}
+
+\maketitle
+
+Power series are useful for more than just \(e^x\).  Starting from a series that we know, like \(\frac{1}{1-x} = \sum_{n=0}^\infty x^n\) for \(|x| < 1\), we can integrate and differentiate to build power series for other functions.
+
+\youtube{https://www.youtube.com/watch?v=jn_5dL1MJYI}
+
+\begin{question}
+  Suppose \(\displaystyle\sum_{n=1}^\infty b_n = \displaystyle\frac{16 \, x^{3}}{{\left(16 \, x^{4} - 1\right)}^{2}}\).  Which of the following could be an expression for \(b_n\)?  Note that \(b_n\) will involve \(x\).
+  
+  \begin{solution}
+    \begin{hint}
+      Let's call \(F(x) = \displaystyle\frac{16 \, x^{3}}{{\left(16 \, x^{4} - 1\right)}^{2}}\).
+    \end{hint}
+    \begin{hint}
+      Note that \(F(x) = \displaystyle\frac{d}{dx} \left( -\displaystyle\frac{1}{4 \, {\left(16 \, x^{4} - 1\right)}} \right)\).
+    \end{hint}
+    \begin{hint}
+      Let's call \(f(x) = -\displaystyle\frac{1}{4 \, {\left(16 \, x^{4} - 1\right)}}\) so that \(F(x) = f'(x)\).
+    \end{hint}
+    \begin{hint}
+      Note that \(\displaystyle\frac{1}{1 - \left(16 \, x^{4}\right)} = \displaystyle\sum_{n=0}^\infty \left( 16 \, x^{4} \right)^n \).
+    \end{hint}
+    \begin{hint}
+      Consequently \(f(x) = \displaystyle\frac{1}{4 \left( 1 - \left(16 \, x^{4}\right)\right)} = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{\left( 16 \, x^{4} \right)^n}{4} \).
+    \end{hint}
+    \begin{hint}
+      Therefore \(F(x) = f'(x) = \displaystyle\frac{d}{dx} \displaystyle\sum_{n=0}^\infty \displaystyle\frac{\left( 16 \, x^{4} \right)^n}{4} \).
+    \end{hint}
+    \begin{hint}
+      We could write this as \(F(x) = \displaystyle\frac{d}{dx} \displaystyle\sum_{n=0}^\infty \displaystyle\frac{\left( 2^{4 \, n} x^{4 \, n} \right)}{4} \).
+    \end{hint}
+    \begin{hint}
+      But power series can be differentiated term-by-term.
+    \end{hint}
+    \begin{hint}
+      Therefore, \(F(x) = \displaystyle\sum_{n=1}^\infty \displaystyle\frac{d}{dx} \displaystyle\frac{\left( 2^{4 \, n} x^{4 \, n} \right)}{4} \).
+    \end{hint}
+    \begin{hint}
+      And so \(F(x) = \displaystyle\sum_{n=1}^\infty \left( 2^{4 \, n} n x^{4 \, n - 1} \right) \).
+    \end{hint}
+    \begin{hint}
+      We conclude that \(b_n = 2^{4 \, n} n x^{4 \, n - 1} \).
+    \end{hint}
+
+
+    \begin{multiple-choice}
+      \choice[correct]{\(2^{4 \, n} n x^{4 \, n - 1}\)}
+      \choice{\(2^{3 \, n} n x^{3 \, n - 1}\)}
+      \choice{\(4^{2 \, n} n x^{2 \, n - 1}\)}
+      \choice{\(3^{3 \, n} n x^{3 \, n - 1}\)}
+      \choice{\(3^{2 \, n} n x^{2 \, n - 1}\)}
+    \end{multiple-choice}
+
+  \end{solution}
+\end{question}
+
+\hrule
+
+\section{What is a formula for the Fibonacci numbers?}
+
+Thinking about power series brings us naturally into the much more advanced topic of \href{http://en.wikipedia.org/wiki/Generating_function}{generating functions}.
+
+Let \((a_n)\) be the sequence of \href{http://en.wikipedia.org/wiki/Fibonacci_number}{Fibonacci numbers}, and consider \(f(x) = \sum_{n=0}^\infty a_n x^n\), the power series with coefficients equal to the Fibonacci numbers.  By messing around with this power series, we will be able to write down a formula for \(a_n\) in terms of \(n\) and, surprisingly, \(\sqrt{5}\).  The \href{http://en.wikipedia.org/wiki/Golden_ratio}{Golden ratio} makes a cameo, too.
+
+\youtube{https://www.youtube.com/watch?v=CR-nmp97Ayo}
+
+
+\hrule
+
+\section{Putting it all together}
+
+\begin{question}
+  Consider the function \[f(t) = \displaystyle\int_0^t e^{-x^2} \, dx.\]  This is an an important function in probability, but it can be hard to work with because it isn't possible to write down an antiderivative for \(e^{-x^2}\) using the ``elementary'' functions we have on hand.  So if we want to compute \(f(\displaystyle\frac{3}{2})\), we'll have to do some work.  Put together what you know about \(e^x\), about integrating power series, and about approximating alternating series to evaluate \(f(\displaystyle\frac{3}{2})\) to within \(\displaystyle\frac{1}{2}\).
+
+I imagine you may want to use a computer to do some arithmetic, but using the ``erf'' button might spoil the fun---assuming you have one, and you rescale it appropriately.
+
+\begin{solution}
+  \begin{hint}
+    We would like to find a series for \(f(t) = \displaystyle\int_0^t e^{-x^2} \, dx\).
+  \end{hint}
+  \begin{hint}
+    One helpful thing is that \(e^x = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{x^n}{n!}\).
+  \end{hint}
+  \begin{hint}
+    This is a tricky step: you might then believe that \(e^{-x^2} = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{\left(-x^2\right)^n}{n!}\).
+  \end{hint}
+  \begin{hint}
+    So we can simplify this to get \(e^{-x^2} = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n \, x^{2n}}{n!}\).
+  \end{hint}
+  \begin{hint}
+    That looks a bit like an alternating series!  That is a good sign (!).
+  \end{hint}
+  \begin{hint}
+    Another thing we can do is integrate a power series term-by-term.
+  \end{hint}
+  \begin{hint}
+    That means that \(\displaystyle\int_{x=0}^t e^{-x^2} \, dx = \displaystyle\int_{x=0}^t \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n \, x^{2n}}{n!} dx = \displaystyle\sum_{n=0}^\infty \displaystyle\int_{x=0}^t \displaystyle\frac{(-1)^n x^{2n}}{n!} dx\).
+  \end{hint}
+  \begin{hint}
+    But \(\displaystyle\int_{x=0}^t x^{2n} \, dx = \displaystyle\frac{x^{2n+1}}{2n+1}\).
+  \end{hint}
+  \begin{hint}
+    So \(f(t) = \displaystyle\int_{x=0}^t e^{-x^2} \, dx = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n x^{2n+1}}{n! \cdot (2n+1)}\).
+  \end{hint}
+  \begin{hint}
+    We want to approximate \(f\left(\displaystyle\frac{3}{2}\right) = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n \left(\displaystyle\frac{3}{2}\right)^{2n+1}}{n! \cdot (2n+1)}\).
+  \end{hint}
+  \begin{hint}
+    This is an alternating series, so we know how to approximate the error in a partial sum.
+  \end{hint}
+  \begin{hint}
+    We look for a term in the series with absolute value no larger than \(\displaystyle\frac{1}{2}\).
+  \end{hint}
+  \begin{hint}
+    So we can talk about this more easily, set \(a_{n} = \displaystyle\frac{\left(\displaystyle\frac{3}{2}\right)^{2 \, n + 1} \left(-1\right)^{n}}{{\left(2 \, n + 1\right)} n!}\).
+  \end{hint}
+  \begin{hint}
+    Plugging in a few values, we find that when \(n = 3\), then \(|a_{3}| = \displaystyle\frac{729}{1792}\) which is less than \(\displaystyle\frac{1}{2}\).
+  \end{hint}
+  \begin{hint}
+    So the true value of the series is between \(\displaystyle\sum_{n = 0}^{2} \displaystyle\frac{\left(\displaystyle\frac{3}{2}\right)^{2 \, n + 1} \left(-1\right)^{n}}{{\left(2 \, n + 1\right)} n!}\) and \(\displaystyle\sum_{n = 0}^{3} \displaystyle\frac{\left(\displaystyle\frac{3}{2}\right)^{2 \, n + 1} \left(-1\right)^{n}}{{\left(2 \, n + 1\right)} n!}\).
+  \end{hint}
+  \begin{hint}
+    Doing some arithmetic, \(\displaystyle\sum_{n = 0}^{2} \displaystyle\frac{\left(\displaystyle\frac{3}{2}\right)^{2 \, n + 1} \left(-1\right)^{n}}{{\left(2 \, n + 1\right)} n!} = \displaystyle\frac{363}{320}\).
+  \end{hint}
+  \begin{hint}
+    Doing some more arithmetic, \(\displaystyle\sum_{n = 0}^{3} \displaystyle\frac{\left(\displaystyle\frac{3}{2}\right)^{2 \, n + 1} \left(-1\right)^{n}}{{\left(2 \, n + 1\right)} n!} = \displaystyle\frac{6519}{8960}\).
+  \end{hint}
+  \begin{hint}
+    Looking over the possible choices, \(1\) is between \(\displaystyle\frac{363}{320}\) and \(\displaystyle\frac{6519}{8960}\).
+  \end{hint}
+  \begin{hint}
+    So we conclude that \(\left| L - 1 \right| < \displaystyle\frac{1}{2}\).
+  \end{hint}
+  \begin{hint}
+    In other words, \(L\) is approximately \(1\) with an error of no more than \(\displaystyle\frac{1}{2}\).
+    
+  \end{hint}
+  
+  \begin{multiple-choice}
+    \choice[correct]{\(1\)}
+    \choice{\(\displaystyle\frac{3}{2}\)}
+    \choice{\(2\)}
+    \choice{\(3\)}
+  \end{multiple-choice}
+
+\end{solution}
+\end{question}
+            
+
+
+\end{document}

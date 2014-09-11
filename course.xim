@@ -28,4 +28,9 @@ comparison-tests/comparison-tests
 alternating-series/alternating-series
   alternating-series/absolute-convergence
   alternating-series/definition
-
+power-series/power-series
+  power-series/identify-power-series
+  power-series/convergence
+  power-series/radius-of-convergence
+  power-series/calculus
+  power-series/geometric-series
