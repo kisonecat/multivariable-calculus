@@ -39,10 +39,10 @@ There are many great things that you can achieve by thinking about Taylor series
                   Let \(f(x) = \sin x\).
                 \end{hint}
                 \begin{hint}
-                  Recall that \(f(x) = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n x^{2n+1}}{(2n+1)!}\) for all \(x\).
+                  Recall that \(f(x) = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n x^{2n+1} }{(2n+1)!}\) for all \(x\).
                 \end{hint}
                 \begin{hint}
-                  Then \(f(x) = \left(\displaystyle\sum_{n=0}^{N} \displaystyle\frac{(-1)^n x^{2n+1}}{(2n+1)!}\right) + R_{2N+2}(x)\) for some remainder \(R_{2N+2}(x)\).
+                  Then \(f(x) = \left(\displaystyle\sum_{n=0}^{N} \displaystyle\frac{(-1)^n x^{2n+1} }{(2n+1)!}\right) + R_{2N+2}(x)\) for some remainder \(R_{2N+2}(x)\).
                 \end{hint}
                 \begin{hint}
                   You might be wondering why the remainder term is \(R_{2N+2}(x)\) and not \(R_{2N+1}(x)\).
@@ -60,13 +60,13 @@ There are many great things that you can achieve by thinking about Taylor series
                   But all the derivatives of sine are \(\pm \cos x\) or \(\pm \sin x\), so regardless of \(N\) and \(z\), we know that \(|f^{(2N+3)}(z)| \leq 1\).
                 \end{hint}
                 \begin{hint}
-                  Consequently, \(|R_{2N+2}(x)| \leq \displaystyle\frac{x^{2N+3}}{(2N+3)!}\).
+                  Consequently, \(|R_{2N+2}(x)| \leq \displaystyle\frac{x^{2N+3} }{(2N+3)!}\).
                 \end{hint}
                 \begin{hint}
                   In this case, \(x = \displaystyle\frac{2}{3}\) and we are desiring an answer within \(\displaystyle\frac{1}{304}\).
                 \end{hint}
                 \begin{hint}
-                  So we need to choose \(N\) large enough that \(\displaystyle\frac{\left(\displaystyle\frac{2}{3}\right)^{2N+3}}{(2N+3)!} \leq \displaystyle\frac{1}{304}\).
+                  So we need to choose \(N\) large enough that \(\displaystyle\frac{\left(\displaystyle\frac{2}{3}\right)^{2N+3} }{(2N+3)!} \leq \displaystyle\frac{1}{304}\).
                 \end{hint}
                 \begin{hint}
                   Some trial and error reveals that \(N = 1\) is big enough.
@@ -97,7 +97,7 @@ Another useful trick---which really boils down to thinking about  \href{http://e
 
 % Relevant video: taylor-for-limits
             \begin{question}
-              By considering Taylor series, evaluate \[\lim_{x \to 0} \displaystyle\frac{{\left(\log\left(x + 1\right) + \sin\left(x\right)\right)}^{2}}{{\left(e^{x} - 1\right)} \tan\left(x\right)}.\]
+              By considering Taylor series, evaluate \[\lim_{x \to 0} \displaystyle\frac{ {\left(\log\left(x + 1\right) + \sin\left(x\right)\right)}^{2} }{ {\left(e^{x} - 1\right)} \tan\left(x\right)}.\]
 
               \begin{solution}
                 \begin{hint}
