@@ -1,0 +1,223 @@
+\documentclass{ximera}
+
+\title{Remainders}
+
+\begin{document}
+
+\begin{abstract}
+  Why should the Taylor series converge to the function you started with?
+\end{abstract}
+
+\maketitle
+
+Once we have written down these higher order approximations (that is, a Taylor series) we ought to address whether or not our supposed approximation is any good!  This is what ``Taylor's theorem'' achieves for us.  The big deal is that this theorem lets us conclude that the power series approximation actually converges to the function we are studying>.
+
+\youtube{https://www.youtube.com/watch?v=HIG8iH2dEjM}
+
+You can think of it as a much fancier version of the mean value theorem from Calculus One.
+
+\youtube{https://www.youtube.com/watch?v=fZ53uSxVoJ8}
+
+There are still some subtle issues with the radius of convergence.
+
+\youtube{https://www.youtube.com/watch?v=z7-vejtX7vo}
+
+\section{What can I do with this, in practice?}
+
+\subsection{Approximating trig functions}
+
+There are many great things that you can achieve by thinking about Taylor series.  One of these is to approximate transcendental functions like cosine on an entire interval.
+
+\youtube{https://www.youtube.com/watch?v=4d8-YSxaXRI}
+
+% Relevant video: taylor-for-limits
+            \begin{question}
+              Use the Taylor series for \(\sin\) to estimate the value of \(\sin \left(\displaystyle\frac{2}{3}\right)\) to within \(\displaystyle\frac{1}{304}\).
+
+              \begin{solution}
+                \begin{hint}
+                  Let \(f(x) = \sin x\).
+                \end{hint}
+                \begin{hint}
+                  Recall that \(f(x) = \displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n x^{2n+1}}{(2n+1)!}\) for all \(x\).
+                \end{hint}
+                \begin{hint}
+                  Then \(f(x) = \left(\displaystyle\sum_{n=0}^{N} \displaystyle\frac{(-1)^n x^{2n+1}}{(2n+1)!}\right) + R_{2N+2}(x)\) for some remainder \(R_{2N+2}(x)\).
+                \end{hint}
+                \begin{hint}
+                  You might be wondering why the remainder term is \(R_{2N+2}(x)\) and not \(R_{2N+1}(x)\).
+                \end{hint}
+                \begin{hint}
+                  This is a little trick: since the coefficient on \(x^{2n+2}\) ends up being zero, we might as well calculate the remainder as if we had summed through the \(0 \cdot x^{2n+2}\) term, since that improves our estimate a bit.
+                \end{hint}
+                \begin{hint}
+                  In any case, by Taylor's theorem (or perhaps more accurately, Lagrange's remainder formula) the remainder can be related to a high derivative of the function elsewhere.
+                \end{hint}
+                \begin{hint}
+                  In particular, \(R_{2N+2}(x) = \displaystyle\frac{f^{(2N+3)}(z)}{(2N+3)!} x^{2N+3}\) for some \(z \in (0,x)\).
+                \end{hint}
+                \begin{hint}
+                  But all the derivatives of sine are \(\pm \cos x\) or \(\pm \sin x\), so regardless of \(N\) and \(z\), we know that \(|f^{(2N+3)}(z)| \leq 1\).
+                \end{hint}
+                \begin{hint}
+                  Consequently, \(|R_{2N+2}(x)| \leq \displaystyle\frac{x^{2N+3}}{(2N+3)!}\).
+                \end{hint}
+                \begin{hint}
+                  In this case, \(x = \displaystyle\frac{2}{3}\) and we are desiring an answer within \(\displaystyle\frac{1}{304}\).
+                \end{hint}
+                \begin{hint}
+                  So we need to choose \(N\) large enough that \(\displaystyle\frac{\left(\displaystyle\frac{2}{3}\right)^{2N+3}}{(2N+3)!} \leq \displaystyle\frac{1}{304}\).
+                \end{hint}
+                \begin{hint}
+                  Some trial and error reveals that \(N = 1\) is big enough.
+                \end{hint}
+                \begin{hint}
+                  With an error of no more than \(\displaystyle\frac{1}{304}\), we can approximate \(\sin \left(\displaystyle\frac{2}{3}\right)\) by \(\displaystyle\frac{2}{3} - \displaystyle\frac{1}{6} \left(\displaystyle\frac{2}{3}\right)^3 = \displaystyle\frac{50}{81}\).
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{\(\displaystyle\frac{50}{81}\)}
+                \choice{\(\displaystyle\frac{87}{128}\)}
+                \choice{\(\displaystyle\frac{5}{6}\)}
+                \choice{\(\displaystyle\frac{1345}{2058}\)}
+                \choice{\(\displaystyle\frac{258}{343}\)}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+            
+\subsection{Evaluating limits}
+
+Another useful trick---which really boils down to thinking about  \href{http://en.wikipedia.org/wiki/Big_O_notation}{big O notation}---is to calculate some tricky limits by making use of Taylor series.
+
+\youtube{https://www.youtube.com/watch?v=CjjLGcy1yBE}
+
+% Relevant video: taylor-for-limits
+            \begin{question}
+              By considering Taylor series, evaluate \[\lim_{x \to 0} \displaystyle\frac{{\left(\log\left(x + 1\right) + \sin\left(x\right)\right)}^{2}}{{\left(e^{x} - 1\right)} \tan\left(x\right)}.\]
+
+              \begin{solution}
+                \begin{hint}
+                  Let's work out the first few terms of the Taylor series for the pieces we see.
+                \end{hint}
+                \begin{hint}
+                  First of all, \(\log\left(x + 1\right) = x - \displaystyle\frac{1}{2}x^{2} + \displaystyle\frac{1}{3}x^{3} - \displaystyle\frac{1}{4}x^{4} + O(x^{5})\).
+                \end{hint}
+                \begin{hint}
+                  You don't really have to compute as many terms as I just did.
+                \end{hint}
+                \begin{hint}
+                  And \(\sin\left(x\right) = x - \displaystyle\frac{1}{6}x^{3} + O(x^{5})\).
+                \end{hint}
+                \begin{hint}
+                  Consequently, \(\log\left(x + 1\right) + \sin\left(x\right) = 2x - \displaystyle\frac{1}{2}x^{2} + O(x^{3})\).
+                \end{hint}
+                \begin{hint}
+                  Therefore \(\left(\log\left(x + 1\right) + \sin\left(x\right)\right)^2 = 4x^{2} + O(x^{3})\).
+                \end{hint}
+                \begin{hint}
+                  We also know \(e^{x} - 1 = x + \displaystyle\frac{1}{2}x^{2} + \displaystyle\frac{1}{6}x^{3} + \displaystyle\frac{1}{24}x^{4} + O(x^{5})\).
+                \end{hint}
+                \begin{hint}
+                  And \(\tan\left(x\right) = x + \displaystyle\frac{1}{3}x^{3} + O(x^{5})\).
+                \end{hint}
+                \begin{hint}
+                  Consequently, \({\left(e^{x} - 1\right)} \tan\left(x\right) = 2x + \displaystyle\frac{1}{2}x^{2} + O(x^{3})\).
+                \end{hint}
+                \begin{hint}
+                  But that means we are considering \[\lim_{x \to 0} \displaystyle\frac{4x^{2} + O(x^{3})}{x^{2} + O(x^{3})}\].
+                \end{hint}
+                \begin{hint}
+                  Multiplying the numerator and denominator by \(1/x^2\), we are considering \[\lim_{x \to 0} \displaystyle\frac{4 + O(x)}{1 + O(x)}\].
+                \end{hint}
+                \begin{hint}
+                  Consequently, this limit equals \(4\).
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{\(4\)}
+                \choice{\(-\displaystyle\frac{3}{8}\)}
+                \choice{\(\displaystyle\frac{12}{25}\)}
+                \choice{\(-\displaystyle\frac{1}{8}\)}
+                \choice{\(12\)}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+            
+\subsection{Substitutions}
+
+It is also possible to make some substitutions to find pretty complicated Taylor series without too much pain.
+
+            \begin{question}
+              Consider the polynomial \(p(x) = 4 \, x^{3} - 3 \, x\).  Use the Taylor series for \(\sin\left(x\right)\) to find a Taylor series for \[f(x) = p(\sin\left(x\right))\] around the point \(x = 0\).
+
+Don't just calculate this by differentiating right away.  Instead, start with the first few terms of the Taylor series for \(\sin\left(x\right)\), and substitute those into the given polynomial to figure out the first few terms.  Feel the power of Taylor series!
+
+              \begin{solution}
+                \begin{hint}
+                  To make this easy on ourselves, we will use &ldquo;big oh&rdquo; notation.
+                \end{hint}
+                \begin{hint}
+                  Note that \(\sin\left(x\right) = x - \displaystyle\frac{1}{6}x^{3} + O(x^{5})\).
+                \end{hint}
+                \begin{hint}
+                  I want to find a power series for \(p(\sin\left(x\right)) = p\left(x - \displaystyle\frac{1}{6}x^{3} + O(x^{5})\right)\).
+                \end{hint}
+                \begin{hint}
+                  To get started, we can compute the first few terms of the power series for \(\left(\sin\left(x\right)\right)^{3}\).
+                \end{hint}
+                \begin{hint}
+                  In this case, \(\left(\sin\left(x\right)\right)^{3} = \left(x - \displaystyle\frac{1}{6}x^{3} + O(x^{5})\right)^{3} = x^{3} - \displaystyle\frac{1}{2}x^{5} + O(x^{7})\).
+                \end{hint}
+                \begin{hint}
+                  And therefore \(4 \left(\sin\left(x\right)\right)^{3} = 4 x^{3} - \displaystyle\frac{1}{2}x^{5} + O(x^{7}) = 4x^{3} - 2x^{5} + O(x^{7})\).
+                \end{hint}
+                \begin{hint}
+                  Doing similar calculations for the other terms, we find \(p(\sin\left(x\right)) = p\left(x - \displaystyle\frac{1}{6}x^{3} + O(x^{5})\right) = -3x + \displaystyle\frac{9}{2}x^{3} + O(x^{5})\).
+                \end{hint}
+                \begin{hint}
+                  Looking over the possible answers, we choose \(-3 \, x+ \displaystyle\frac{9}{2} \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \).
+                \end{hint}
+                \begin{hint}
+                  Of course, there are other methods by which this calculation might be done.
+                \end{hint}
+                \begin{hint}
+                  In this case, we could have used the fact that  \(p(\sin\left(x\right)) = -\sin\left(3 \, x\right)\).
+                \end{hint}
+                \begin{hint}
+                  We can then substitute \(3x\) into the power series, and conclude that \(-3 \, x+ \displaystyle\frac{9}{2} \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \) is the beginning of the power series for \(p(\sin\left(x\right))\).
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{\(-3 \, x+ \displaystyle\frac{9}{2} \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \)}
+                \choice{\(-3 \, x+ 4 \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \)}
+                \choice{\(-3 \, x+ \displaystyle\frac{25}{6} \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \)}
+                \choice{\(-3 \, x+ \displaystyle\frac{13}{3} \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \)}
+                \choice{\(-3 \, x+ \displaystyle\frac{14}{3} \, x^{3}-\displaystyle\frac{81}{40} \, x^{5}+ \cdots \)}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+            
+
+\section{What can I do with this, in theory?}
+
+The theory of Taylor series sheds some light on just how nice some functions really are.
+
+\youtube{https://www.youtube.com/watch?v=i5RTq94OtqM}
+
+In particular, I like to say that \href{http://en.wikipedia.org/wiki/Analytic_function}{analytic functions} sort of resemble holograms!
+
+\youtube{https://www.youtube.com/watch?v=8xWPhgj1Tss}
+
+\end{document}

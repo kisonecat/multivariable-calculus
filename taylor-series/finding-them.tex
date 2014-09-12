@@ -1,0 +1,211 @@
+\documentclass{ximera}
+
+\title{Computing Taylor series}
+
+\begin{document}
+
+\begin{abstract}
+  To compute the Taylor series, you need only calculate lots of derivatives.
+\end{abstract}
+
+\maketitle
+
+There are really many perspectives from which one may approach Taylor series.  One approach goes by trying to produce ``higher order'' versions of some of the ideas and theorems from Calculus One.  For instance, in Calculus One, we had the idea of a \href{http://en.wikipedia.org/wiki/Linear_approximation}{linear approximation}, which we can improve to higher order polynomial approximations.
+
+\youtube{https://www.youtube.com/watch?v=LJC4bpt6pBE}
+
+You could work out these approximations around the origin\ldots
+
+\youtube{https://www.youtube.com/watch?v=J2yoEz5bZ6I}
+
+Or you could work out these higher-order approximations around some other point.
+
+\youtube{https://www.youtube.com/watch?v=bEMkqb0CNLg}
+
+You can learn how to find the Taylor series for a function by differentiating repeatedly.  Many familiar functions have nice Taylor series expansions, including trigonometric functions like sine.
+
+\youtube{https://www.youtube.com/watch?v=eGXGlG5CuYE}
+
+% Relevant video: taylor-series
+            \begin{question}
+              Now let's try it!  What are the first few terms of the Taylor series for \(f(x) = {\left(e^{x} - 1\right)} \tan\left(x\right)\) centered around the point \(a = 0\)?
+
+              \begin{solution}
+                \begin{hint}
+                  
+Recall that the Taylor series for \(f\) around \(a\) is given by \[\displaystyle\sum_{n=0}^\infty {f^{(n)}(a)\over n!}(x-a)^n\].
+                \end{hint}
+                \begin{hint}
+                  In this case, we are told to consider \(a = 0\).
+                \end{hint}
+                \begin{hint}
+                  So we must calculate derivatives of \(f\) at \(0\).
+                \end{hint}
+                \begin{hint}
+                  Start by calculating the zeroth derivative, meaning just the function itself, at \(x = 0\).
+                \end{hint}
+                \begin{hint}
+                  In that case, \(f(0) = 0\).
+                \end{hint}
+                \begin{hint}
+                  Next calculate \(\displaystyle\frac{d}{dx} f(x) = {\left(\tan\left(x\right)^{2} + 1\right)} {\left(e^{x} - 1\right)} + e^{x} \tan\left(x\right)\).
+                \end{hint}
+                \begin{hint}
+                  Therefore, \(f^{(1)}(0) = 0\).
+                \end{hint}
+                \begin{hint}
+                  Next calculate \(f^{(2)}(x) = \displaystyle\frac{d}{dx} {\left(\tan\left(x\right)^{2} + 1\right)} {\left(e^{x} - 1\right)} + e^{x} \tan\left(x\right) = 2 \, {\left(\tan\left(x\right)^{2} + 1\right)} {\left(e^{x} - 1\right)} \tan\left(x\right) + 2 \, {\left(\tan\left(x\right)^{2} + 1\right)} e^{x} + e^{x} \tan\left(x\right)\).
+                \end{hint}
+                \begin{hint}
+                  Therefore \(f^{(2)}(0) = 2\).
+                \end{hint}
+                \begin{hint}
+                  This is enough to pick out the correct answer from among the given answers.
+                \end{hint}
+                \begin{hint}
+                  Consider the \(n = 2\) term, i.e., the coefficient on \(x^2\).  Since \(f^{(2)}(0) = 2\), the coefficient must be \(1\).
+
+                \end{hint}
+                \begin{hint}
+                  Looking over the possible answers, the power series for \(f\) must begin \(0 + x^{2}+ \displaystyle\frac{1}{2} \, x^{3}+ \displaystyle\frac{1}{2} \, x^{4}+ \displaystyle\frac{5}{24} \, x^{5}+ \cdots \).
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{\(0 + x^{2}+ \displaystyle\frac{1}{2} \, x^{3}+ \displaystyle\frac{1}{2} \, x^{4}+ \displaystyle\frac{5}{24} \, x^{5}+ \cdots \)}
+                \choice{\(0 + 4 \, x^{2}+ \displaystyle\frac{1}{2} \, x^{3}+ \displaystyle\frac{1}{2} \, x^{4}+ \displaystyle\frac{5}{24} \, x^{5}+ \cdots \)}
+                \choice{\(0 + 2 \, x^{2}+ \displaystyle\frac{1}{2} \, x^{3}+ \displaystyle\frac{1}{2} \, x^{4}+ \displaystyle\frac{5}{24} \, x^{5}+ \cdots \)}
+                \choice{\(0 + \displaystyle\frac{1}{2} \, x^{3}+ \displaystyle\frac{1}{2} \, x^{4}+ \displaystyle\frac{5}{24} \, x^{5}+ \cdots \)}
+                \choice{\(0 + 2 \, x^{2}+ \displaystyle\frac{1}{2} \, x^{3}+ \displaystyle\frac{1}{2} \, x^{4}+ \displaystyle\frac{5}{24} \, x^{5}+ \cdots \)}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+
+% Relevant video: series-for-sine
+            \begin{question}
+              Here's another example.  Consider the function \(f(x) = \cos x\).  Which of the following is the Taylor series for \(f\) around zero?
+              \begin{solution}
+                \begin{hint}
+                  What happens when we differentiate \(f\) a bunch of times?
+                \end{hint}
+                \begin{hint}
+                  I care because the Taylor series around zero is \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{f^{(n)}(0)}{n!} x^n\).
+                \end{hint}
+                \begin{hint}
+                  Note that \(\displaystyle\frac{d}{dx}\cos x = -\sin x\), so \(f'(0) = 0\).
+                \end{hint}
+                \begin{hint}
+                  Then \(\displaystyle\frac{d^2}{dx^2}\cos x = -\cos x\), so \(f^{(2)}(0) = -1\).
+                \end{hint}
+                \begin{hint}
+                  And then \(\displaystyle\frac{d^3}{dx^3}\cos x = \sin x\), so \(f^{(3)}(0) = 0\).
+                \end{hint}
+                \begin{hint}
+                  Finally, \(\displaystyle\frac{d^4}{dx^4}\cos x = \cos x\), so \(f^{(4)}(0) = 1\).
+                \end{hint}
+                \begin{hint}
+                  And I say &ldquo;finally&rdquo; because now, the pattern repeats, since the fourth derivative is the same as the original function.
+                \end{hint}
+                \begin{hint}
+                  So the derivatives of \(f\) at zero, starting from the zeroth derivative (which is just the function itself), follow the pattern: \(1,\quad 0,\quad -1,\quad 0,\quad 1,\quad 0,\quad -1,\quad 0,\quad 1,\quad 0\) and so on.
+                \end{hint}
+                \begin{hint}
+                  Since all the odd derivatives vanish at zero, there will be no odd terms in the Taylor series for \(f\).
+                \end{hint}
+                \begin{hint}
+                  So I could write the Taylor series as \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{f^{(2n)}(0)}{(2n)!} x^{2n}\).
+                \end{hint}
+                \begin{hint}
+                  Since the even derivatives alternative between \(-1\) and \(1\), I can write the Taylor series as \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n}{(2n)!} x^{2n}\).
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^n}{(2n)!} x^{2n}\)}
+                \choice{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^{n+1}}{(2n)!} x^{2n}\)}
+                \choice{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^{n+1}}{(2n+1)!} x^{2n}\)}
+                \choice{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^{n}}{(2n+1)!} x^{2n}\)}
+                \choice{\(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{(-1)^{n+1}}{(2n)!} x^{2n+1}\)}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+            
+
+\section{What happens if we do this to a polynomial?}
+
+% Relevant video: taylor-series-center-a
+            \begin{question}
+              By finding the Taylor series around \(x = -1\), rewrite the polynomial \(p(x) = -2 \, x^{3} + 4 \, x^{2} - x + 2\) as a polynomial in \((x + 1)\).
+
+              \begin{solution}
+                \begin{hint}
+                  If I differentiate a polynomial enough times, I get zero.
+                \end{hint}
+                \begin{hint}
+                  So if I compute the Taylor series for a polynomial, I just get another polynomial.
+                \end{hint}
+                \begin{hint}
+                  That may seem pointless, but imagine writing down the Taylor series centered not at \(0\), but instead centered at \(x = -1\).
+                \end{hint}
+                \begin{hint}
+                  Then we will have written down the same polynomial, but in terms of \((x + 1)\).
+                \end{hint}
+                \begin{hint}
+                  Recall that the Taylor series for \(p(x)\) centered at \(-1\) is given by \[\displaystyle\sum_{n=0}^\infty \displaystyle\frac{p^{(n)}(-1)}{n!} \left(x + 1\right)^n.\]
+                \end{hint}
+                \begin{hint}
+                  Now the zeroth derivative is just the original function, so we compute \(p^{(0)}(-1) = -2 \, \left( -1 \right)^{3} + 4 \, \left( -1 \right)^{2} - \left( -1 \right) + 2 = 9\).
+                \end{hint}
+                \begin{hint}
+                  We differentiate to find \(p'(x) = -6 \, x^{2} + 8 \, x - 1\).
+                \end{hint}
+                \begin{hint}
+                  Therefore \(p'(-1) = -6 \, \left( -1 \right)^{2} + 8 \, \left( -1 \right) - 1 = -15\).
+                \end{hint}
+                \begin{hint}
+                  Differentiate again to find \(p^{(2)}(x) = -12 \, x + 8\).
+                \end{hint}
+                \begin{hint}
+                  Therefore \(p^{(2)}(-1) = -12 \, \left( -1 \right) + 8 = 20\).
+                \end{hint}
+                \begin{hint}
+                  Differentiate one more time to find \(p^{(3)}(x) = -12\).
+                \end{hint}
+                \begin{hint}
+                  That is easy!  So \(p^{(3)}(-1) = -12\).
+                \end{hint}
+                \begin{hint}
+                  Now we can put these facts into the formula for the Taylor series centered at \(-1\).
+                \end{hint}
+                \begin{hint}
+                  We have \(p(x) = \displaystyle\frac{p^{(3)}(-1)}{6} \left(x + 1\right)^3 + \displaystyle\frac{p^{(2)}(-1)}{2} \left(x + 1\right)^2 + p^{(1)}(-1) \left(x + 1\right) + p(-1)\).
+                \end{hint}
+                \begin{hint}
+                  Substituting what we found, we get \(p(x) = \displaystyle\frac{-12}{6} \left(x + 1\right)^3 + \displaystyle\frac{20}{2} \left(x + 1\right)^2 + -15 \left(x + 1\right) + 9\).
+                \end{hint}
+                \begin{hint}
+                  And therefore, \(p(x) = -2 \, \left( x + 1 \right)^{3} + 10 \, \left( x + 1 \right)^{2} - 15 \, \left( x + 1 \right) + 9\).
+
+                \end{hint}
+
+
+              \begin{multiple-choice}
+                \choice[correct]{\( -2 \, \left( x + 1 \right)^{3} + 10 \, \left( x + 1 \right)^{2} - 15 \, \left( x + 1 \right) + 9 \)}
+                \choice{\( -2 \, \left( x + 1 \right)^{3} + 12 \, \left( x + 1 \right)^{2} - 15 \, \left( x + 1 \right) + 9 \)}
+                \choice{\( -2 \, \left( x + 1 \right)^{3} + 11 \, \left( x + 1 \right)^{2} - 15 \, \left( x + 1 \right) + 9 \)}
+                \choice{\( -2 \, \left( x + 1 \right)^{3} + 15 \, \left( x + 1 \right)^{2} - 15 \, \left( x + 1 \right) + 9 \)}
+                \choice{\( -2 \, \left( x + 1 \right)^{3} + 6 \, \left( x + 1 \right)^{2} - 15 \, \left( x + 1 \right) + 9 \)}
+
+              \end{multiple-choice}
+
+              \end{solution}
+            \end{question}
+            
+
+\end{document}

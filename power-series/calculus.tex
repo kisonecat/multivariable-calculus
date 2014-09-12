@@ -15,20 +15,20 @@ When thinking about power series, lots of intuitive facts can be guessed by thin
 \youtube{https://www.youtube.com/watch?v=-IeyyON8FIw}
 
 \begin{question}
-  Consider the power series \[f(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right).\]  Which series below is a power series for \(f'(x)\)?
+  Consider the power series \[f(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n - 2\right)} x^{n} }{4 \, n - 5} \right).\]  Which series below is a power series for \(f'(x)\)?
 
   \begin{solution}
     \begin{hint}
-      Let's suppose that \(R\) is the radius of convergence of \(\displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\).
+      Let's suppose that \(R\) is the radius of convergence of \(\displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n - 2\right)} x^{n} }{4 \, n - 5} \right)\).
     \end{hint}
     \begin{hint}
-      The theorem tells us that we can differentiate \(f(x)\) by differentiating \(\displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\) term-by-term.
+      The theorem tells us that we can differentiate \(f(x)\) by differentiating \(\displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n - 2\right)} x^{n} }{4 \, n - 5} \right)\) term-by-term.
     \end{hint}
     \begin{hint}
-      This means that \(f'(x)\) is equal to \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{d}{dx} \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\) at least for \(x \in (-R,R)\).
+      This means that \(f'(x)\) is equal to \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{d}{dx} \left( \displaystyle\frac{ {\left(5 \, n - 2\right)} x^{n} }{4 \, n - 5} \right)\) at least for \(x \in (-R,R)\).
     \end{hint}
     \begin{hint}
-      Differentiating, we find \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{d}{dx} \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n}}{4 \, n - 5} \right) = 
+      Differentiating, we find \(\displaystyle\sum_{n=0}^\infty \displaystyle\frac{d}{dx} \left( \displaystyle\frac{ {\left(5 \, n - 2\right)} x^{n} }{4 \, n - 5} \right) = 
       \displaystyle\sum_{n=1}^\infty \left( \displaystyle\frac{5 \, n - 2}{4 \, n - 5} \displaystyle\frac{d}{dx} x^{n} \right)\).
     \end{hint}
     \begin{hint}
@@ -65,16 +65,16 @@ When thinking about power series, lots of intuitive facts can be guessed by thin
       This can be written in a slightly different form.
     \end{hint}
     \begin{hint}
-      I conclude that \(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 8 \, n + 3\right)} x^{n}}{4 \, n - 1} \right) \).
+      I conclude that \(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n^{2} + 8 \, n + 3\right)} x^{n} }{4 \, n - 1} \right) \).
     \end{hint}
 
     
     \begin{multiple-choice}
-      \choice[correct]{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 8 \, n + 3\right)} x^{n}}{4 \, n - 1} \right)\)}
-      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} - 2 \, n\right)} x^{n}}{4 \, n - 5} \right)\)}
-      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 3 \, n - 2\right)} x^{n}}{4 \, n - 5} \right)\)}
-      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{{\left(5 \, n^{2} + 3 \, n\right)} x^{n}}{4 \, n - 1} \right)\)}
-      \choice{\(f'(x) = \displaystyle\sum_{n=1}^\infty \left( \displaystyle\frac{{\left(5 \, n - 2\right)} x^{n - 1}}{4 \, n - 5} \right)\)}
+      \choice[correct]{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n^{2} + 8 \, n + 3\right)} x^{n} }{4 \, n - 1} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n^{2} - 2 \, n\right)} x^{n} }{4 \, n - 5} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n^{2} + 3 \, n - 2\right)} x^{n} }{4 \, n - 5} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=0}^\infty \left( \displaystyle\frac{ {\left(5 \, n^{2} + 3 \, n\right)} x^{n} }{4 \, n - 1} \right)\)}
+      \choice{\(f'(x) = \displaystyle\sum_{n=1}^\infty \left( \displaystyle\frac{ {\left(5 \, n - 2\right)} x^{n - 1} }{4 \, n - 5} \right)\)}
     \end{multiple-choice}
 
   \end{solution}

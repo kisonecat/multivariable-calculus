@@ -26,7 +26,7 @@ On the other hand, it is also possible to find a situation where \(R = 0\), mean
 
 % Relevant video: radius-of-convergence
 \begin{question}
-  What is the radius of convergence of the series \(\displaystyle\displaystyle\sum_{n=3}^\infty \left( \displaystyle\frac{3 \, n x^{n}}{2^{n} + 3 \, n} \right)\)?
+  What is the radius of convergence of the series \(\displaystyle\displaystyle\sum_{n=3}^\infty \left( \displaystyle\frac{3 \, n x^{n} }{2^{n} + 3 \, n} \right)\)?
   
   \begin{solution}
     \begin{hint}
@@ -39,17 +39,17 @@ On the other hand, it is also possible to find a situation where \(R = 0\), mean
       We want this limit to be less than one to get absolute convergence.
     \end{hint}
     \begin{hint}
-      In this case, \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| \displaystyle\frac{\displaystyle\frac{3 \, {\left(n + 1\right)}}{2^{n + 1} + 3 \, n + 3}}{\displaystyle\frac{3 \, n}{2^{n} + 3 \, n}} \right| \cdot \left| x \right|\).
+      In this case, \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| \displaystyle\frac{\displaystyle\frac{3 \, {\left(n + 1\right)} }{2^{n + 1} + 3 \, n + 3} }{\displaystyle\frac{3 \, n}{2^{n} + 3 \, n} } \right| \cdot \left| x \right|\).
     \end{hint}
     \begin{hint}
-      Simplifying, \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| \displaystyle\frac{{\left(2^{n} + 3 \, n\right)} {\left(n + 1\right)}}{{\left(2^{n + 1} + 3 \, n + 3\right)} n} \right| \cdot \left| x \right|\).
+      Simplifying, \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| \displaystyle\frac{ {\left(2^{n} + 3 \, n\right)} {\left(n + 1\right)} }{ {\left(2^{n + 1} + 3 \, n + 3\right)} n} \right| \cdot \left| x \right|\).
     \end{hint}
     \begin{hint}
       Multiply the numerator and denominator by \(1/2^n\).
     \end{hint}
     \begin{hint}
       Then \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \lim_{n \to \infty} \left| 
-        \displaystyle\frac{n + \displaystyle\frac{3 \, n^{2}}{2^{n}} + \displaystyle\frac{3 \, n}{2^{n}} + 1}{2 \, n + \displaystyle\frac{3 \, n^{2}}{2^{n}} + \displaystyle\frac{3 \, n}{2^{n}}} \right| \cdot \left| x \right|\).
+        \displaystyle\frac{n + \displaystyle\frac{3 \, n^{2} }{2^{n} } + \displaystyle\frac{3 \, n}{2^{n} } + 1}{2 \, n + \displaystyle\frac{3 \, n^{2} }{2^{n} } + \displaystyle\frac{3 \, n}{2^{n} }} \right| \cdot \left| x \right|\).
     \end{hint}
     \begin{hint}
       So \(\lim_{n \to \infty} \displaystyle\frac{|a_{n+1} x^{n+1}|}{|a_{n} x^{n}|} = \displaystyle\frac{1}{2} \cdot \left| x \right|\).

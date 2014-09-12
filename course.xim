@@ -34,3 +34,6 @@ power-series/power-series
   power-series/radius-of-convergence
   power-series/calculus
   power-series/geometric-series
+taylor-series/taylor-series
+  taylor-series/finding-them
+  taylor-series/remainders
