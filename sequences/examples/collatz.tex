@@ -19,12 +19,17 @@
 
 Here is a fun sequence with which to amuse your friends---or distract
 your enemies.  Let's start our sequence with $a_1 = 6$.  Subsequent
-terms are defined using the rule
-$$
-a_n = \begin{cases} a_{n-1} / 2 & \mbox{ if $a_{n-1}$ is even, and } \\
-3 \, a_{n-1} + 1 & \mbox{ if $a_{n-1}$ is odd.}
-\end{cases}
-$$
+terms are defined using the rule: \\
+
+\begin{displaymath}
+a_n = \left\{
+  \begin{array}{lr}
+    a_{n-1}\ /\ 2 & if \enspace a_{n-1} \enspace is \enspace even\\
+    3 \cdot \left( a_{n-1} \right) + 1 & if \enspace a_{n-1} \enspace is \enspace odd\\
+  \end{array}
+\right.
+\end{displaymath}
+
 Let's compute $a_2$.  Since $a_1$ is even, we follow the instructions
 in the first line, to find that $a_2 = a_1/2 = 3$. To compute $a_3$,
 note that $a_2$ is odd so we follow the instruction in the second
